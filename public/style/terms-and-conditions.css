@@ -1,0 +1,80 @@
+.terms-and-conditions-menu{
+    width: 100%;
+    height: auto;
+}
+
+.terms-and-conditions-menu-alt{
+    display: block;
+    white-space: nowrap;
+    font-size: 20px;
+    font-family: "Josefin Sans";
+    line-height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+
+    transition: font-size 0.2s;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}   
+
+.terms-and-conditions-menu-alt:hover{
+    font-size: 22px;
+}
+
+.terms-and-conditions-content{
+    width: 100%;
+    padding-top: 50px;
+}
+
+.terms-and-conditions-content-header{
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.25);
+    line-height: 80px;
+}
+
+.terms-and-conditions-content-paragraph{
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+    padding-bottom: 0px;
+    font-family: "Josefin Sans";
+    text-decoration: none;
+    color: black;
+
+}
+
+.preview-exit{
+    background-image: url(../img/icons/exit.png);
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-50%);
+    right: 15px;
+    top: 50%;
+    cursor: pointer;
+}
+
+.dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: black;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-2px);
+    margin-right: 10px;
+}

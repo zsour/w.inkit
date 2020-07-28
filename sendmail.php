@@ -1,0 +1,252 @@
+
+
+<?php
+
+    $body = "
+        <html>
+
+        <head>
+        <style>
+            .content{
+                width: 1000px;
+                height: auto;   
+                background-color: #151515;
+                position: relative;
+            }
+
+            .order{
+                width: 960px;
+                margin-left: 20px;
+                height: auto;   
+                background-color: #151515;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .order-header{
+                width: 960px;
+                min-height: 280px;
+                position: relative;
+                border-bottom: solid 1px rgba(0,0,0,0.25);
+                background-color: white;
+                font-size: 0px;
+            }
+
+            .order-header-container{
+                width: 480px;
+                min-height: 250px;
+                height: auto;
+                display: inline-block;
+                position: relative;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+
+
+            .company-info{
+                width: 440px;
+                height: auto;
+                margin-top:25px;
+                margin-left: 20px;
+            }
+
+            .company-info-alt{
+                width: 100%;
+                height: auto;
+                background-color: white;
+                border-bottom: solid 1px rgba(0,0,0,0.15);
+                line-height: 40px;
+                font-size: 16px;
+                font-family: 'Arial';
+            }
+
+            .company-logo{
+                background-image: url('http://kubkompa.wwwnl1-ss17.a2hosted.com/public/img/logo.png');
+                width: 150px;
+                height: 150px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                display: inline-block;
+                margin-right: 20px;
+                margin-top: 10px;
+            }
+
+            .date-and-id{
+                width: 440px;
+                height: auto;
+                margin-right: 25px;
+                position: relative;
+                margin-top: 15px;
+            }
+
+            .date-and-id-alt{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 16px;
+                font-family: 'Arial';
+            }
+
+            .sold-to-container{
+                width: 940px;
+                min-height: 200px;
+                position: relative;
+                border-bottom: solid 1px rgba(0,0,0,0.25);
+                background-color: white;
+                padding-left: 20px;
+                padding-top: 25px;
+                font-family: 'Arial';
+            }
+
+            .sold-to-header{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 16px;
+            }
+
+            .sold-to-alt{
+                width: 900px;
+                height: auto;
+                line-height: 30px;
+                font-size: 16px;
+                padding-left: 10px;
+            }
+
+
+            .order-products{
+                width: 960px;
+                height: auto;
+                background-color: white;
+                position: relative;
+            }
+
+            .product-header{
+                width: 940px;
+                height: 30px;
+                line-height: 30px;
+                margin-left: 20px;
+                font-family: 'Arial';
+                margin-top: 20px;
+                padding-top: 5px;
+            }
+
+            .product-header-alt{
+                font-size: 16px;
+                display: inline-block;
+            }
+
+            .product{
+                width: 940px;
+                min-height: 30px;
+                line-height: 30px;
+                font-family: 'Arial';
+                padding-top: 5px;
+                border-top: solid 1px rgba(0,0,0,0.25);
+            }
+
+            .product-alt{
+                font-size: 16px;
+                display: inline-block;
+                text-align: center;
+                height: auto;
+                vertical-align: middle;
+            }
+
+            .total-cost{
+                width: 960px;
+                height: auto;
+                line-height: 30px;
+                font-family: 'Arial';
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: white;
+                text-align: right;
+                border-top: solid 1px rgba(0,0,0,0.25);
+
+            }
+
+            .total-cost-alt{
+                font-size: 16px;
+                margin-right: 20px;
+            }
+
+        </style>
+        </head>
+
+        <body>
+            <div class='content'>
+
+            <div class='order'>
+                <div class='order-header'>
+                    <div class='order-header-container'>
+                        <div class='company-info'> 
+                            <div class='company-info-alt'>Company Name: <b>Kubkompaniet</b></div> 
+                            <div class='company-info-alt'>Address: <b>Gråhallsvägen 23, 432 47, Varberg, Sweden</b></div> 
+                            <div class='company-info-alt'>Phone: <b>0739808116</b></div> 
+                            <div class='company-info-alt'>Email: <b>daniel.karlsson36@outlook.com</b></div> 
+                            <div class='company-info-alt'>Organization Number: <b>123456789</b></div> 
+                        </div> 
+                    </div>
+                    <div class='order-header-container' style='text-align: right;'>
+                        <div class='company-logo'></div>
+                        <div class='date-and-id'>
+                            <div class='date-and-id-alt'>Date: <b>2020-07-15 00:19</b></div> 
+                            <div class='date-and-id-alt'>Receipt Number: <b>5</b></div> 
+                        </div> 
+                    </div>
+                </div>
+
+                <div class='sold-to-container'>
+                    <div class='sold-to-header'><b>Sold to:</b></div>
+                    <div class='sold-to-alt'>Full Name: <b>Daniel Karlsson</b></div>
+                    <div class='sold-to-alt'>Email: <b>daniel.karlsson36@outlook.com</b></div>
+                    <div class='sold-to-alt'>Shipping Address: <b>Gråhallsvägen 23, 432 47, Varberg, Sweden</b></div>
+                    <div class='sold-to-alt'>Phone: <b>0739808116</b></div>
+                </div>
+
+                <div class='order-products'>
+                    <div class='product-header'>
+                        <div class='product-header-alt' style='width: 100px;'><b>Quantity</b></div> 
+                        <div class='product-header-alt' style='width: 100px;'><b>Product #</b></div> 
+                        <div class='product-header-alt' style='width: 500px;'><b>Description</b></div> 
+                        <div class='product-header-alt' style='width: 100px;'><b>Price (ea)</b></div> 
+                        <div class='product-header-alt' style='width: 100px;'><b>Price (total)</b></div> 
+                    </div>
+
+                    <div class='product'>
+                        <div class='product-alt' style='width: 100px;'><b>2</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>49</b></div>
+                        <div class='product-alt' style='width: 500px; text-align: center;'><b>Acrobatic - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>79 &euro;</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>158 &euro;</b></div>
+                    </div>
+
+                    <div class='product'>
+                        <div class='product-alt' style='width: 100px;'><b>2</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>49</b></div>
+                        <div class='product-alt' style='width: 500px; text-align: center;'><b>Acrobatic - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>79 &euro;</b></div>
+                        <div class='product-alt' style='width: 100px;'><b>158 &euro;</b></div>
+                    </div>
+                </div>
+
+                <div class='total-cost'> 
+                        <div class='total-cost-alt'>Shipping: <b>Free</b></div>
+                        <div class='total-cost-alt'>Tax (12%): <b>37,92 &euro;</b></div>
+                        <div class='total-cost-alt'>Total Amount Paid: <b>316,00 &euro;</b></div>
+                </div> 
+            </div>
+
+            </div>
+        </body>
+
+        </html>
+        ";
+
+   // mail("daniel.karlsson36@outlook.com", "Thank you for your order! - Here's your receipt.", $body, "Content-Type: text/html; charset=UTF-8\r\n");
+    
+    echo($body);
+   
+?>

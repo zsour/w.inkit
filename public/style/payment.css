@@ -1,0 +1,67 @@
+#dropin-container{
+    width: 900px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.btn-container{
+    width: 100%;
+    height: 50px;
+
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+
+.submit-btn-text{
+    font-size: 25px;
+    color: white;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 10px;
+    font-family: 'Josefin Sans';
+    transform: translateY(3px);
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#submit-button{
+    width: auto;
+    height: 40px;
+
+    background-color: #212121;
+    display: inline-block; 
+
+    margin-right: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.submit-button-icon{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url('../img/icons/money2.png');
+}
+
+.error-contianer{
+    width: 100%;
+    height: 40px;
+
+    background-color: rgb(233, 88, 88);
+}
+
+.error-text{
+    font-size: 20px;
+    color: black;
+    font-family: 'Josefin Sans';
+
+    margin-left: 10px;
+    line-height: 40px;
+}

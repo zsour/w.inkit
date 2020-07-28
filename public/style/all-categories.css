@@ -1,0 +1,95 @@
+.all-categories-container{
+    width: 100%;
+    height: auto;
+}
+
+.all-categories-category{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    color: black;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.all-categories-category-title{
+    width: 100%;
+    height: 30px;
+    user-select: none;
+    font-size: 16px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom: solid rgba(0, 0, 0, 0.25) 0.5px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    background-color: #424242;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.all-categories-category-description{
+    height: auto;
+    width: 100%;
+    position: relative;
+    padding-top: 5px;
+}
+.all-categories-category-description-title{
+    font-size: 12px;
+    height: 20px;
+    width: 60%;
+    display: inline-block;
+    border-bottom: solid rgba(0, 0, 0, 0.25) 0.5px;
+    border-right: solid rgba(0, 0, 0, 0.25) 0.5px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    padding-left: 10px;
+    
+}
+
+.all-categories-category-description-text{
+    font-size: 12px;
+    min-height: 100px;
+    height: auto;
+    width: 60%;
+    display: inline-block;
+    border-right: solid rgba(0, 0, 0, 0.25) 0.5px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    padding: 10px;
+}
+
+
+.all-categories-category-description-buttons{
+    font-size: 12px;
+    min-height: 100px;
+    width: 40%;
+    display: inline-block;
+    position: absolute;
+    left: 60%;
+    text-align: center;
+}
+
+.all-categories-category-description-buttons-button{
+    width: 60%;
+    height: 25px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    background-color: #424242;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.all-categories-category-arrow{
+    background-color: white;
+    right: 5%;
+    position: absolute;
+    top: 11px;
+}

@@ -1,0 +1,121 @@
+.login-form-container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    background-color: #212121;
+    width: 350px;
+    height: 310px;
+    transform: translateY(-50%) translateX(-50%);
+    box-shadow: 1px 1px 4px 1px rgba(55, 37, 84, 0.6);
+}
+
+.username{
+    left: 25px;
+    top: 60px;
+}
+
+.password{
+    left: 25px;
+    top: 160px;
+}
+
+
+
+.username, .password{
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    border-radius: 20px;
+
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    border: none;
+    padding-left: 20px;
+
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.username:focus, .password:focus{
+    border: none;
+    outline: none;
+}
+
+.username:active, .password:active{
+    border: none;
+    outline: none;
+}
+
+.username-text, .password-text{
+    font-size: 20px;
+    color: white;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 25px;
+}
+
+.username-text{
+    top: 28px;
+}
+
+.password-text{
+    top: 128px;
+}
+
+.login-btn-container{
+    width: 350px;
+    height: 60px;
+    
+    position: absolute;
+    bottom: 0px;
+    
+    background-color: #06bcfb;
+    background-image: linear-gradient(315deg, #06bcfb 0%, #4884ee 74%);
+}
+
+.login-btn{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.login-btn-text{
+    font-size: 20px;
+    color: black;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    white-space: nowrap;
+}
+
+.error-field{
+    width: 100%;
+    height: 30px;
+
+    bottom: 0;
+    border-bottom: solid rgba(0, 0, 0, 0.8) 0.5px;
+    background-color: rgb(160, 18, 18);
+    position: relative;
+}
+
+.error-field-text{
+    color: white;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}

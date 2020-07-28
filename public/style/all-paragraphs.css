@@ -1,0 +1,35 @@
+.paragraph-container{
+    width: 540px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: white;
+    position: relative;
+}
+
+.paragraph-header{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.paragraph-content{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+
+    font-size: 14px;
+    padding: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.paragraph-header-btn{
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 200px;
+}

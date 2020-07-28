@@ -1,0 +1,76 @@
+#username, #password, #password_confirmation, #full_name{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    border: none;
+    padding-left: 10px;
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.user{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.user-header{
+    width: 100%;
+    height: 30px;
+    border-bottom: rgba(0, 0, 0, 0.25) solid 0.5px;
+}
+
+.user-header-field{
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+    font-family: 'Big Shoulders Text', cursive;
+    padding-left: 10px;
+    border-right: rgba(0, 0, 0, 0.25) solid 0.5px;
+}
+
+.user-field{
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: black;
+    display: inline-block;
+    font-family: 'Big Shoulders Text', cursive;
+    padding-left: 10px;
+    border-right: rgba(0, 0, 0, 0.25) solid 0.5px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.remove-user-btn{
+    width: 70px;
+    height: 25px;
+    background-color: rgb(66, 66, 66);
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    line-height: 25px;
+}
+
+.remove-user-btn-text{
+    font-size: 18px;
+    font-family: 'Big Shoulders Text', cursive;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    color: white;
+}

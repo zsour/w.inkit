@@ -1,0 +1,236 @@
+.edit-terms-and-conditions-container{
+    width: auto;
+    height: auto;
+
+    display: inline-block;
+    position: relative;
+    background-color: white;
+}
+
+.edit-terms-and-conditions-title{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background-color: rgb(66, 66, 66);
+    line-height: 40px;
+}
+
+.edit-terms-and-conditions-title-text{
+    font-size: 20px;
+    color: white;
+    font-family: "Big Shoulders Text";
+    margin-left: 10px;
+}
+
+.edit-terms-and-conditions-button-container{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    line-height: 60px;
+    vertical-align: top;
+}
+
+.edit-terms-and-conditions-button{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(66, 66, 66);
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+}
+
+.edit-terms-and-conditions-refresh-btn{
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/icons/refresh_icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.edit-terms-and-conditions-refresh-btn:hover{
+    animation: refreshRotate 0.4s;
+}
+
+@keyframes refreshRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.edit-terms-and-conditions-button-text{
+    font-size: 16px;
+    color: white;
+    font-family: "Big Shoulders Text";
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+
+    white-space: nowrap;
+
+    top: 50%;
+    left: 50%;
+}
+
+#header-title, .add-terms-and-conditions-submit-btn, #headerTitleSelect, #terms{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    border: none;
+    padding-left: 10px;
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+#terms{
+    min-height: 500px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+#header-title:hover, .add-terms-and-conditions-submit-btn:hover{
+    transform: translateY(-2px);
+}
+
+.add-terms-and-conditions-submit-btn{
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 40px;
+    background-color: white;
+}
+
+.terms-and-conditions-title{
+    width: 540px;
+    height: auto;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.terms-and-conditions-title-top{
+    height: 40px;
+    background-color: rgb(66, 66, 66);
+    line-height: 40px;
+
+}
+
+.terms-and-conditions-title-top-text{
+    font-size: 20px;
+    margin-left: 10px;
+    font-family: 'Big Shoulders Text', cursive;
+    color: white;
+    width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.terms-and-conditions-title-buttons{
+    height: 60px;
+    background-color: white;
+    line-height: 40px;
+    text-align: right;
+
+}
+
+.moveUpBtn{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/icons/up_arrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.moveDownBtn{
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/icons/down_arrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+.removeBtn{
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/icons/cross_grey.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.editing-switch{
+    width: 60px;
+    height: 30px;
+
+    display: inline-block;
+    background-color: #25974b;
+    vertical-align: middle;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100px;
+
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.editing-switch-btn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: white;
+    border-radius: 100%;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    right: -30%;
+    transition: right 0.2s;
+}
+
+.editing-switch-btn-icon{
+    width: 35px;
+    height: 35px;
+
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    background-image: url('../img/icons/web.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+
+.small-btn{
+    width: 120px;
+}

@@ -1,0 +1,299 @@
+.cart-container{
+    width: 100%;
+    height: auto;
+    min-height: 800px;
+    position: relative;
+}
+
+.cart-container-header{
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.cart-container-header-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
+    color: black;
+    font-size: 30px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.cart-product{
+    width: 450px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 25px;
+    border: rgba(0, 0, 0, 0.6) solid 1.5px;
+    padding: 0px;
+    position: relative;
+}
+
+.cart-product-image-container{
+    width: 100px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.cart-product-container{
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cart-checkout-container{
+    width: 500px;
+    height: 620px;
+    
+    display: inline-block;
+    border-left: rgba(0, 0, 0, 0.25) solid 1.5px;
+}
+
+.cart-product-title-container{
+    width: 200px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    border-left: rgba(0, 0, 0, 0.6) solid 1.5px;
+    padding: 5px;
+    overflow: hidden;
+}
+.cart-product-quantity-container{
+    width: 146px;
+    height: 100%;
+    display: inline-block;
+    border-left: rgba(0, 0, 0, 0.6) solid 1.5px;
+    vertical-align: top;
+}
+
+.cart-product-image-image{
+    width: 100px;
+    height: 90px;
+
+    background-image: url('../img/paintin.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 3.5px;
+}
+
+.cart-product-title{
+    font-size: 15px;
+    overflow: hidden;
+    position: absolute;
+    line-height: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.cart-product-quantity{
+    width: 100%;
+    height: 50%;
+    border-bottom: rgba(0, 0, 0, 0.6) solid 1.5px;
+    padding: 5px;
+    position: relative;
+}
+
+
+.cart-product-quantity-price{
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.cart-product-quantity-minus{
+    margin-left: 5px;
+    width: 30px;
+    height: 100%;
+    background-image: url('../img/icons/minus.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+.cart-product-quantity-plus{
+    width: 30px;
+    height: 100%;
+    background-image: url('../img/icons/plus.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cart-product-quantity-num{
+    width: 20px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.cart-product-quantity-remove{
+    width: 34px;
+    height: 34px;
+    background-image: url('../img/icons/cross.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.cart-product-quantity-price-text{
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 15px;
+
+    font-family: 'Josefin Sans', sans-serif;
+    white-space: nowrap;
+}
+
+.cart-checkout-container-header{
+    width: 500px;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    border-bottom: rgba(0,0,0,0.25) solid 1.5px; 
+    line-height: 50px;
+}
+
+.cart-checkout-container-header-text{
+    font-family: 'Playfair Display';
+    font-size: 25px;
+    display: inline-block;
+}
+
+.cart-input-field{
+    width: 460px;
+    height: 30px;
+    margin-left: 20px;
+    border: rgba(0, 0, 0, 0.6) solid 1.5px;
+    padding-left: 5px;
+    font-family: 'Playfair Display';
+    font-size: 16px;
+}
+
+.cart-input-header{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 18px;
+    font-family: 'Playfair Display';
+}
+
+.cart-checkout-continue{
+    width: 500px;
+    height: 50px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.cart-checkout-continue-accept-policy{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.cart-input-checkbox{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cart-checkout-continue-accept-policy-text{
+    position: absolute;
+    height: 25px;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    white-space: nowrap;
+    line-height: 25px;
+    font-family: 'Playfair Display';
+}
+
+.cart-checkout-continue-button{
+    width: auto;
+    height: 40px;
+    background-color: #212121;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    line-height: 40px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 20px;
+    pointer-events: none;
+    opacity: 0.4;
+    
+}
+
+.cart-checkout-continue-button-text{
+    font-family: 'Josefin Sans';
+    position: relative;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(2px);
+}
+
+.cart-payment-information{
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+    border-top: rgba(0, 0, 0, 0.25) solid 1.5px;
+    text-align: right;
+}
+
+.cart-payment-information-textbox{
+    white-space: nowrap;
+    font-size: 18px;
+    font-family: 'Playfair Display';
+    margin-right: 20px;
+}
+.cart-product-quantity-num-text{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.cart-checkout-continue-button-icon{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../img/icons/money2.png');
+    vertical-align: middle;
+}

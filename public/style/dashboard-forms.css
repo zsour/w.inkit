@@ -1,0 +1,156 @@
+#product-title, #product-price, #product-list-price, #submit-btn, #product-description, #product-height, #product-width
+, #product-quantity, #product-category, #product-production-value, #category-title, #category-description, #product-weight{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    border: none;
+    padding-left: 10px;
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+#product-title:hover, #product-price:hover, #product-list-price:hover, #submit-btn:hover, #product-description:hover, #product-height:hover, #product-width:hover
+, #product-quantity:hover, #product-category:hover, #product-production-value:hover, #category-title:hover, #category-description:hover, #product-weight:hover{
+    transform: translateY(-2px);
+}
+
+#product-title:focus, #product-price:focus, #product-list-price:focus, #submit-btn:focus, #product-description:focus, #product-height:focus, #product-width:focus
+, #product-quantity:focus, #product-category:focus, #product-production-value:focus, #category-title:focus, #category-description:focus, #product-weight:focus{
+    transform: translateY(-2px);
+}
+
+#product-category{
+    cursor: pointer;
+}
+
+#submit-btn, #product-image-btn{
+    background-color: white;
+    cursor: pointer;
+}
+
+#product-description, #category-description{
+    height: 200px;
+    padding-top: 5px;
+}
+
+#product-image-btn{
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    margin-bottom: 10px;
+    position: relative;
+    user-select: none;
+
+    border-radius: 20px;
+}
+
+.headerAboveInput{
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+.product-image-btn-center-text{
+    display: inline-block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+    font-size: 14px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+.image-gallery{
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: white;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin: 10px;
+    margin-left: 0px;
+    margin-top: 10px;
+    border-radius: 100px;
+}
+
+.remove-image{
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+
+    top: 4px;
+    right: 4px;
+    background-color: rgba(221, 17, 85, 1);
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.submit-text-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 14px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+#submit-btn{
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 40px;
+    
+}
+
+.error{
+    width: 100%;
+    height: 30px;
+
+    display: inline-block;
+    background-color: rgba(221, 17, 17, 0.9);
+    margin-bottom: 15px;
+    position: relative;
+    user-select: none;
+
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+#error-text-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 16px;
+    color: white;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+.extended-info-container{
+    overflow:hidden; 
+    position:relative; 
+    height: 0px; 
+    transition: height 0.2s;
+}

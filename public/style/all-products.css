@@ -1,0 +1,153 @@
+.all-products-container{
+    width: 100%;
+}
+
+.all-products-product{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 5px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 0px;
+    cursor: default;
+    transition: 0.2s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.all-products-product-title, .all-products-product-price, .all-products-product-list-price, .all-products-product-category,
+.all-products-product-width, .all-products-product-height, .all-products-product-quantity, .all-products-product-weight, .all-products-product-production-value{
+    width: auto;
+    width: 60%;
+    height: 26px;
+    display: inline-block;
+    font-size: 15px;
+    border-bottom: rgba(0, 0, 0, 0.2) solid 0.8px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    overflow: hidden;
+}
+
+.all-products-product-title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 60%;
+}
+
+.all-products-product-production-value{
+    border-bottom: none;
+}
+
+.placeholder-information{
+    width: auto;
+    height: 15px;
+    font-size: 15px;
+    opacity: 0.8;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 5px;
+    
+}
+
+.all-products-img-and-buttons-container{
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+}
+
+.all-products-buttons{
+    width: 100%;
+    height: 50%;
+    border-bottom: rgba(0, 0, 0, 0.2) solid 0.8px;
+    border-left: rgba(0, 0, 0, 0.2) solid 0.8px;
+    user-select: none;
+}
+
+.all-products-edit{
+    width: 40%;
+    height: 15%;
+    display: inline-block;
+    background-color: #424242;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+
+    border-radius: 40px;
+    transition: transform 0.2s;
+    color: white;
+}
+
+.all-products-remove{
+    width: 40%;
+    height: 15%;
+    display: inline-block;
+    background-color: #424242;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+
+    border-radius: 40px;
+    transition: transform 0.2s;
+    color: white;
+}
+
+.all-products-edit:hover, .all-products-remove:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.button-text{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+}
+
+.all-products-img-icons{
+    width: 100%;
+    height: 50%;
+    border-left: rgba(0, 0, 0, 0.2) solid 0.8px;
+    user-select: none;
+}
+
+.all-products-img-icon{
+    height: 75%;
+    width: 20%;
+    border: rgba(0, 0, 0, 0.2) solid 0.8px;
+    margin-top: 6.25%;
+    margin-left: 3.125%;
+    display: inline-block;
+    cursor: zoom-in;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.otherImg{
+    width: 20px;
+    height: 20px;
+    background-color: #424242;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: inline-block;
+    border-top-left-radius: 100%;
+    color: white;
+}
+
+#otherImgText{
+    font-size: 12px;
+    top: 60%;
+    left: 55%;
+}

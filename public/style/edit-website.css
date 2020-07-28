@@ -1,0 +1,38 @@
+.webfile{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: white;
+    display: inline-block;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    user-select: none;
+}
+
+.webfile-info{
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.webfile-info:hover{
+    opacity: 1;
+}
+
+.webfile-btn{
+    width: 80%;
+    height: 25px;
+    margin-bottom: 10px;
+    background-color: #424242;
+    position: relative;
+    margin-left: 10%;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+}
