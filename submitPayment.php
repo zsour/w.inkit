@@ -21,7 +21,7 @@
     ]);
 
 
-    if(!$order || empty($_POST['deviceData'])){
+    if(!$order || empty($_POST['deviceData']) || $order->paid == 1){
       unset($_SESSION['order_id']);
       header('Location: cart.php');  
     }else{
@@ -42,7 +42,6 @@
             }
         }
 
-        print_r($_POST['nonce']);
 
         $result = $gateway->transaction()->sale([
             'amount' => $totalAmount,

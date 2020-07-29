@@ -146,7 +146,7 @@
                         <input type="hidden" name="orderId" value="<?= $order->braintree_id; ?>">
                     </form>
                   
-                    <div class="all-orders-setup-buttons-button bg-red" onclick="document.getElementById('refundOrder<?= $order->id; ?>').submit();">
+                    <div class="all-orders-setup-buttons-button bg-red" onclick="Modal.securityCheckModal('refundOrder<?= $order->id; ?>', 'Are you sure you want to refund/void the complete order for <?= $priceCounter?>&euro;?');">
                         <div class="button-text-align">
                             REFUND/VOID
                         </div>
@@ -184,14 +184,18 @@
         endforeach;
     ?>
 
-    <div class="modal-background" id="modalBG" onclick="Modal.closeModal();">
+  
+    
+    </div>
+
+    
+    
+</div>
+
+<div class="modal-background" id="modalBG" onclick="Modal.closeModal();">
         <div class="modal-content" id="modalContent">
-            
+          
         </div>
-    </div>
-    
-    </div>
-    
 </div>
 
 

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../public/style/all-categories.css">
 <link rel="stylesheet" href="../public/style/edit-website.css">
 <link rel="stylesheet" href="../public/style/create-terms-and-conditions.css">
+<link rel="stylesheet" href="../public/style/modal-style.css">
 
 
 <?php

@@ -1,0 +1,83 @@
+.popup-container{
+    width: 400px;
+    min-height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.popup-containter-header{
+    width: 100%;
+    height: 30px;
+    background-color: #424242;
+    display: block;
+    position: relative;
+    text-align: right;
+}
+
+.popup-header-cancel-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+    display: inline-block;
+    background-image: url("../img/icons/cross.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.popup-container-message{
+    width: 100%;
+    height: 60px;
+    line-height: 30px;
+    display: block;
+    position: relative;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.popup-container-message-text{
+    font-size: 20px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+.popup-container-buttons{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    text-align: right;
+    line-height: 40px;
+}
+
+.popup-confirm-btn{
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #d63737;
+    color: white;
+    position: relative;
+}
+
+
+.popup-btn-text{
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-size: 18px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
