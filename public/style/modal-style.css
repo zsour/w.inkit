@@ -17,6 +17,7 @@
     display: block;
     position: relative;
     text-align: right;
+    transform: translateY(-2px);
 }
 
 .popup-header-cancel-icon{

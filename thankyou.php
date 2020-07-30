@@ -246,7 +246,7 @@
     
                 if(!$productQuery){
                     unset($_SESSION['order_id']);
-                   // header('Location: ./');  
+                    header('Location: ./');  
                 }else{
                     $body .= "
                     <div class='product'>
@@ -281,7 +281,7 @@
         }
        }else{
             unset($_SESSION['order_id']);
-            //header('Location: ./');
+            header('Location: ./');
        }
 ?>
 

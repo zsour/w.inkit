@@ -162,7 +162,6 @@
     opacity: 1;
     position: absolute;
     top: 0px;
-    cursor: pointer;
     pointer-events: none;
     transition: background-color 0.2s;
 }

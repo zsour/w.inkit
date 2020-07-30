@@ -27,6 +27,7 @@ class Modal{
 
                     var popupContainerCancel = document.createElement('span');
                     popupContainerCancel.className = "popup-header-cancel-icon";
+                    popupContainerCancel.addEventListener('click', Modal.closeModal)
                     popupContainerHeader.appendChild(popupContainerCancel);
 
                 var popupContainerMessageContainer = document.createElement('div');

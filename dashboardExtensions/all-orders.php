@@ -30,11 +30,18 @@
                 <p class="order-title-text">Order: <?= $order->id; ?></p> 
         
                 <?php
-                    if($order->refunded == 1):
-                ?>
-                    <span class="refund-icon"></span>
-                <?php
-                    endif;
+                    if(!$order->refunded && $order->shipped == 1){
+                        echo('<span class="order-complete-icon"></span>');
+                    }else if($order->refunded && !$order->cart){
+                        echo('<span class="complete-refund-icon"></span>');
+                    }else if($order->refunded && $order->cart){
+                        echo('<span class="refund-icon"></span>');
+                        if($order->shipped == 0){
+                            echo('<span class="shipping-icon"></span>');
+                        }
+                    }else if(!$order->refunded && $order->shipped == 0){
+                        echo('<span class="shipping-icon"></span>');
+                    }
                 ?>
                 <span class="display-arrow all-orders-order-arrow" id="order-<?= $order->id; ?>-button-arrow"></span>
                 </div>
@@ -74,7 +81,7 @@
                             
                                 <div class="all-orders-order-product-row-info-alt">Product ID: <b><?= $product->id; ?></b></div>
                                 <div class="all-orders-order-product-row-info-alt" style="overflow: hidden;">Product Title: <b><?= $product->title; ?></b></div>
-                                <div class="all-orders-order-product-row-info-alt">Product Price: <b><?= $cartProduct->priceDuringOrder; ?> &euro;</b></div>
+                                <div class="all-orders-order-product-row-info-alt">Product Price During Order: <b><?= $cartProduct->priceDuringOrder; ?> &euro;</b></div>
                                 <div class="all-orders-order-product-row-info-alt">Quantity In Stock: <b><?= $product->quantity; ?></b></div>
                                 <div class="all-orders-order-product-row-info-alt">Quantity In Order: <b><?= $cartProduct->quantity; ?></b></div>
                            
@@ -84,10 +91,6 @@
                                 <div class="all-orders-order-product-row-button" onclick="Navigation.loadComponents('./edit-order-cart-product.php?orderId=<?=$order->id;?>&productId=<?=$product->id;?>');">
                                    <div class="button-text-align">EDIT</div>
                                 </div>
-
-                                <div class="all-orders-order-product-row-button">
-                                   <div class="button-text-align">REMOVE</div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -95,8 +98,53 @@
 
                 <?php
                     endforeach;
+                    if($order->refunded):
                 ?>
-
+                <div class="refunds-header">
+                    Refunds:
+                </div>
+                <?php
+                    endif;
+                    if($order->refunded):
+                        $refunded = json_decode($order->refunded);
+                        foreach($refunded as $cartProduct):
+                            $product = $db->findFirst('products', [
+                                'conditions' => 'id = ?',
+                                'bind' => [$cartProduct->id]
+                            ]);  
+                            $image = json_decode($product->image)[0];
+                ?>
+                    <div class="all-orders-order-product">
+                        <div class="all-orders-order-product-row">
+                            <div class="all-orders-order-product-row-img-container">
+                                
+                                <div class="all-orders-order-product-row-img" style="
+                                    background-image: url('<?= $image;?>');
+                                    background-size: contain;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                "></div>
+                            </div>
+                            <div class="all-orders-order-product-row-info">
+                                
+                                    <div class="all-orders-order-product-row-info-alt">Product ID: <b><?= $product->id; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt" style="overflow: hidden;">Product Title: <b><?= $product->title; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Product Price During Order: <b><?= $cartProduct->priceDuringOrder; ?> &euro;</b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Quantity In Stock: <b><?= $product->quantity; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Quantity In Order: <b><?= $cartProduct->quantity; ?></b></div>
+                            
+                            </div>
+                            <div class="all-orders-order-product-row-buttons">
+                                <div class="all-orders-order-product-row-buttons-container">
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    endforeach;
+                    endif;
+                ?>
                 <div class="all-orders-customer-information-block">
                     <div class="all-orders-customer-information-block-alt">Customer Full Name: <b><?= $order->full_name; ?></b></div>
                     <div class="all-orders-customer-information-block-alt">Order ID: <b><?= $order->id; ?></b></div>
@@ -127,7 +175,11 @@
                     <div class="all-orders-customer-information-block-alt">Total Profit: <b class="green-text">
                     <?php
                             if($totalProductionValue > 0 && !$productionValueCheck){
-                                echo($priceCounter - $totalProductionValue);
+                                if($priceCounter == 0){
+                                    echo("Order Refunded - No Profit");
+                                }else{
+                                    echo($priceCounter - $totalProductionValue);
+                                }
                             }else{
                                 echo('?');
                             }
@@ -171,9 +223,18 @@
                         <div class="button-text-align">EMAIL CUSTOMER</div>
                     </div>
 
+                    <?php
+                        if($order->shipped == 0):
+                    ?>
+                    <form action="">
+
+                    </form>
                     <div class="all-orders-setup-buttons-button important-button">
                         <div class="button-text-align">UPDATE SHIPPING STATUS</div>
                     </div>
+                    <?php
+                        endif;
+                    ?>
                 </div>
 
         </div>
@@ -192,7 +253,7 @@
     
 </div>
 
-<div class="modal-background" id="modalBG" onclick="Modal.closeModal();">
+<div class="modal-background" id="modalBG">
         <div class="modal-content" id="modalContent">
           
         </div>

@@ -95,7 +95,9 @@
                 ">
                 Current Quantity In Order (Remove Only):
                 </div>
-                <form action="./functionality/functionality.edit-order-cart-product.php" id="form-to-update-product-in-cart">
+                <form action="./functionality/functionality.edit-order-cart-product.php" id="form-to-update-product-in-cart" method="post">
+                    <input type="hidden" name="productId" value="<?= $currentProduct->id; ?>">
+                    <input type="hidden" name="orderId" value="<?= $currentOrder->id; ?>">
                     <input type="hidden" name="oldPrice" id="oldPrice" value="<?= $priceDuringOrder; ?>">
                     <input type="hidden" name="oldQuantity" id="oldQuantity" value="<?= $currentAmountInCart; ?>">
                     <input type="number" name="newQuantity" id="newQuantity" value="<?= $currentAmountInCart; ?>"
@@ -122,7 +124,7 @@
     
     </div>
 
-    <div class="modal-background" id="modalBG" onclick="Modal.closeModal();">
+    <div class="modal-background" id="modalBG">
         <div class="modal-content" id="modalContent">
             
         </div>

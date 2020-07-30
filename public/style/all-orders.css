@@ -190,11 +190,22 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: #9BE564;
+    background-image: url('../img/icons/refund.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 5px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+.complete-refund-icon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url('../img/icons/complete-refund.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     vertical-align: middle;
     margin-top: 5px;
 }
@@ -210,11 +221,11 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: #9BE564;
+    background-image: url('../img/icons/archived.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 10px;
+    margin-left: 5px;
     vertical-align: middle;
     margin-top: 5px;
 }
@@ -223,11 +234,10 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: #d63737;
+    background-image: url('../img/icons/shipping.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 5px;
     vertical-align: middle;
     margin-top: 5px;
 }
@@ -237,4 +247,28 @@
 }
 .text-white{
     color: white;
+}
+
+.refunds-header{
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    border-top: rgba(0, 0, 0, 0.25) solid 0.5px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+}
+
+.order-complete-icon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url('../img/icons/check-icon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    vertical-align: middle;
+    margin-top: 5px;
 }
