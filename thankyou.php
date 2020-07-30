@@ -203,7 +203,7 @@
 
         if(!$order){
             unset($_SESSION['order_id']);
-           // header('Location: ./');
+            header('Location: ./cart');
         }else{
 
             $body .= "
@@ -253,11 +253,11 @@
                        <div class='product-alt' style='width: 100px;'><b>" . $product->quantity . "</b></div>
                        <div class='product-alt' style='width: 100px;'><b>" . $productQuery->id . "</b></div>
                        <div class='product-alt' style='width: 500px; text-align: center;'><b>" . $productQuery->title . "</b></div>
-                       <div class='product-alt' style='width: 100px;'><b>" . $productQuery->price . " &euro;</b></div>
-                       <div class='product-alt' style='width: 100px;'><b>" . ($product->quantity * $productQuery->price) . " &euro;</b></div>
+                       <div class='product-alt' style='width: 100px;'><b>" . $product->priceDuringOrder . " &euro;</b></div>
+                       <div class='product-alt' style='width: 100px;'><b>" . ($product->quantity * $product->priceDuringOrder) . " &euro;</b></div>
                    </div>
                     ";
-                    $totalAmount += ($product->quantity * $productQuery->price);
+                    $totalAmount += ($product->quantity * $product->priceDuringOrder);
                 }     
         }
 

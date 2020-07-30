@@ -12,10 +12,15 @@
         public function addToCart($id, $quantity){
             $currentCart = self::initCart();
             $productCartIndex = self::checkIfProductExistsInCart($id);
+            $currentPrice = DB::getInstance()->findFirst('products', array(
+                'conditions' => 'id = ?',
+                'bind' => [$id]
+            ))->price;
             if($productCartIndex == -1 && isset($quantity)){ 
                 array_push($_SESSION['cart'], array(
                     'id' => $id,
-                    'quantity' => $quantity
+                    'quantity' => $quantity,
+                    'priceDuringOrder' => $currentPrice
                 ));
             }else if($productCartIndex != -1 && isset($quantity)){
                     $currentCart[$productCartIndex]['quantity'] += $quantity;

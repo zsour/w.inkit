@@ -52,7 +52,7 @@
                             'bind' => [$cartProduct->id]
                         ]);  
                         $image = json_decode($product->image)[0];
-                        $priceCounter += ($cartProduct->quantity * $product->price);
+                        $priceCounter += ($cartProduct->quantity * $cartProduct->priceDuringOrder);
                         $totalProductionValue += ($cartProduct->quantity * $product->production_value);
                         if($product->production_value == 0){
                             $productionValueCheck = true;
@@ -74,14 +74,14 @@
                             
                                 <div class="all-orders-order-product-row-info-alt">Product ID: <b><?= $product->id; ?></b></div>
                                 <div class="all-orders-order-product-row-info-alt" style="overflow: hidden;">Product Title: <b><?= $product->title; ?></b></div>
-                                <div class="all-orders-order-product-row-info-alt">Product Price: <b><?= $product->price; ?> &euro;</b></div>
+                                <div class="all-orders-order-product-row-info-alt">Product Price: <b><?= $cartProduct->priceDuringOrder; ?> &euro;</b></div>
                                 <div class="all-orders-order-product-row-info-alt">Quantity In Stock: <b><?= $product->quantity; ?></b></div>
                                 <div class="all-orders-order-product-row-info-alt">Quantity In Order: <b><?= $cartProduct->quantity; ?></b></div>
                            
                         </div>
                         <div class="all-orders-order-product-row-buttons">
                             <div class="all-orders-order-product-row-buttons-container">
-                                <div class="all-orders-order-product-row-button">
+                                <div class="all-orders-order-product-row-button" onclick="Navigation.loadComponents('./edit-order-cart-product.php?orderId=<?=$order->id;?>&productId=<?=$product->id;?>');">
                                    <div class="button-text-align">EDIT</div>
                                 </div>
 

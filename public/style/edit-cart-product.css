@@ -1,0 +1,72 @@
+.product-to-edit-container{
+    width: 100%;
+    margin-top: 10px
+}
+
+.product-to-edit-info-container{
+    width: 80%;
+    font-size: 0px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.product-to-edit-info-block{
+    width: 100%;
+    white-space: nowrap;
+    height: 30px;
+    background-color: white;
+    border-bottom: solid rgba(0, 0, 0, 0.25) 0.5px;
+    line-height: 30px;
+}
+
+.product-to-edit-info-block-text{
+    font-size: 20px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+}
+.product-to-edit-img{
+    width: 20%;
+    white-space: nowrap;
+    height: 120px;
+    background-color: white;
+    display: inline-block;
+    font-size: 0px;
+    vertical-align: middle;
+    border-bottom: solid rgba(0, 0, 0, 0.25) 0.5px;
+    border-right: solid rgba(0, 0, 0, 0.25) 0.5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#newQuantity{
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Big Shoulders Text', cursive;
+}
+
+.save-changes-btn{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background-color: #424242;
+    margin-top: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.save-changes-text{
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+
+    color: white;
+    font-size: 18px;
+    font-family: 'Big Shoulders Text', cursive;
+}
