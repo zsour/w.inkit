@@ -33,10 +33,10 @@
                 <?php
                     if(!$order->refunded && $order->shipped == 1){
                         echo('<span class="order-complete-icon"></span>');
-                    }else if($order->refunded && !$order->cart){
-                        echo('<span class="archived-icon"></span>');
+                    }else if($order->refunded && empty(json_decode($order->cart))){
+                        echo('<span class="order-complete-icon"></span>');
                         echo('<span class="complete-refund-icon"></span>');
-                    }else if($order->refunded && $order->cart){
+                    }else if($order->refunded && !empty(json_decode($order->cart))){
                         echo('<span class="archived-icon"></span>');
                         echo('<span class="refund-icon"></span>');
                         if($order->shipped == 0){
@@ -211,7 +211,7 @@
                     </div>
 
                     <?php
-                        if($order->shipped == 0):
+                        if($order->shipped == 0 && !empty(json_decode($order->cart))):
                     ?>
                     <div class="all-orders-setup-buttons-button important-button">
                         <div class="button-text-align">UPDATE SHIPPING STATUS</div>

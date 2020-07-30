@@ -25,24 +25,19 @@
         ));
 
         
-            $result = $gateway->transaction()->refund($currentOrder->braintree_id, $amountToRefund);
+           $result = $gateway->transaction()->refund($currentOrder->braintree_id, $amountToRefund);
             
             if($result->success){
                 $oldCart = json_decode($currentOrder->cart);
-                $cartItemIndex = -1;
                 foreach($oldCart as $key => $item){
                     if($item->id == $currentProduct->id){
                         if($_POST['newQuantity'] == 0){
-                            $cartItemIndex = $key;
+                            unset($oldCart[$key]);
                             break;
                         }else{
                             $item->quantity = $_POST['newQuantity'];
                         }   
                     }
-                }
-
-                if($cartItemIndex != -1){
-                    unset($oldCart[$cartItemIndex]);
                 }
 
                 $newCart = json_encode($oldCart);
@@ -54,7 +49,7 @@
                 if($currentOrder->refunded){
                     $temp = json_decode($currentOrder->refunded);
                     $existsInArray = false;
-                    foreach($temp as $key => $item)){
+                    foreach($temp as $key => $item){
                         if($item->id == $_POST['productId']){
                             $existsInArray = true;
                             $item->quantity += $amountToRemove;
@@ -81,17 +76,17 @@
                         header('Location: ../all-orders.php');
                     }
                 }else{
-                    $temp = array(
+                    $temp = [[
                         'id' => $_POST['productId'],
                         'quantity' => $amountToRemove,
                         'priceDuringOrder' => $_POST['oldPrice']
-                    );
+                    ]];
 
                     DB::getInstance()->update('orders', $currentOrder->id, array(
                         'refunded' => json_encode($temp)
                     ));
 
-                    header('Location: ../all-orders.php');
+                   header('Location: ../all-orders.php');
                 }
             }else{
                 header('Location: ../edit-order-cart-product.php?orderId=' . $_POST["orderId"] . '&productId=' . $_POST["productId"]);

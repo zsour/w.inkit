@@ -32,9 +32,10 @@
                 <?php
                     if(!$order->refunded && $order->shipped == 1){
                         echo('<span class="order-complete-icon"></span>');
-                    }else if($order->refunded && !$order->cart){
+                    }else if($order->refunded && empty(json_decode($order->cart))){
+                        echo('<span class="order-complete-icon"></span>');
                         echo('<span class="complete-refund-icon"></span>');
-                    }else if($order->refunded && $order->cart){
+                    }else if($order->refunded && !empty(json_decode($order->cart))){
                         echo('<span class="refund-icon"></span>');
                         if($order->shipped == 0){
                             echo('<span class="shipping-icon"></span>');
@@ -108,11 +109,11 @@
                     if($order->refunded):
                         $refunded = json_decode($order->refunded);
                         foreach($refunded as $cartProduct):
-                            $product = $db->findFirst('products', [
+                            $refundedProduct = $db->findFirst('products', [
                                 'conditions' => 'id = ?',
                                 'bind' => [$cartProduct->id]
                             ]);  
-                            $image = json_decode($product->image)[0];
+                            $image = json_decode($refundedProduct->image)[0];
                 ?>
                     <div class="all-orders-order-product">
                         <div class="all-orders-order-product-row">
@@ -127,11 +128,11 @@
                             </div>
                             <div class="all-orders-order-product-row-info">
                                 
-                                    <div class="all-orders-order-product-row-info-alt">Product ID: <b><?= $product->id; ?></b></div>
-                                    <div class="all-orders-order-product-row-info-alt" style="overflow: hidden;">Product Title: <b><?= $product->title; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Product ID: <b><?= $refundedProduct->id; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt" style="overflow: hidden;">Product Title: <b><?= $refundedProduct->title; ?></b></div>
                                     <div class="all-orders-order-product-row-info-alt">Product Price During Order: <b><?= $cartProduct->priceDuringOrder; ?> &euro;</b></div>
-                                    <div class="all-orders-order-product-row-info-alt">Quantity In Stock: <b><?= $product->quantity; ?></b></div>
-                                    <div class="all-orders-order-product-row-info-alt">Quantity In Order: <b><?= $cartProduct->quantity; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Quantity In Stock: <b><?= $refundedProduct->quantity; ?></b></div>
+                                    <div class="all-orders-order-product-row-info-alt">Quantity Refunded: <b><?= $cartProduct->quantity; ?></b></div>
                             
                             </div>
                             <div class="all-orders-order-product-row-buttons">
@@ -175,13 +176,17 @@
                     <div class="all-orders-customer-information-block-alt">Total Profit: <b class="green-text">
                     <?php
                             if($totalProductionValue > 0 && !$productionValueCheck){
-                                if($priceCounter == 0){
+                                if(!$priceCounter){
                                     echo("Order Refunded - No Profit");
                                 }else{
                                     echo($priceCounter - $totalProductionValue);
                                 }
                             }else{
-                                echo('?');
+                                if(!$priceCounter){
+                                    echo("Order Refunded - No Profit");
+                                }else{
+                                    echo('?');
+                                } 
                             }
                         ?>
                     &euro;</b></div>
@@ -192,7 +197,7 @@
                 <div class="all-orders-setup-buttons-container">
 
                 <?php
-                    if($order->refunded != 1):
+                    if(!$order->refunded && !empty(json_decode($order->cart))):
                 ?>
                     <form action="functionality/refund-order.php" method="post" id="refundOrder<?= $order->id; ?>">
                         <input type="hidden" name="orderId" value="<?= $order->braintree_id; ?>">
@@ -224,7 +229,7 @@
                     </div>
 
                     <?php
-                        if($order->shipped == 0):
+                        if($order->shipped == 0 && !empty(json_decode($order->cart))):
                     ?>
                     <div class="all-orders-setup-buttons-button important-button" onclick="Modal.sendShippingInfo(<?= $order->id; ?>);">
                         <div class="button-text-align">UPDATE SHIPPING STATUS</div>
