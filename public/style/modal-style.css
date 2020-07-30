@@ -6,7 +6,7 @@
     top: 0%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    border-radius: 10px;
+
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -36,7 +36,7 @@
 
 .popup-container-message{
     width: 100%;
-    min-height: 60px;
+    min-height: 30px;
     line-height: 30px;
     display: block;
     position: relative;
@@ -56,10 +56,12 @@
     background-color: white;
     text-align: right;
     line-height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .popup-confirm-btn{
-    width: 80px;
+    width: auto;
     height: 30px;
     display: inline-block;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
@@ -70,15 +72,63 @@
     background-color: #d63737;
     color: white;
     position: relative;
+    line-height: 30px;
 }
 
 
 .popup-btn-text{
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    position: absolute;
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 18px;
     font-family: 'Big Shoulders Text', cursive;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.modalInputField{
+    width: 90%;
+    margin-left: 5%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+
+    border: none;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+    padding-left: 10px;
+}
+
+.modalInputFieldTitle{
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.modalError{
+    width: 100%;
+    height: auto;
+}
+
+.modalErrorText{
+    width: 100%;
+    padding-left: 10px;
+    white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
+
+    font-size: 18px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    color: white;
+    background-color: #d63737;
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
 }

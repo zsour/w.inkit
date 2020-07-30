@@ -12,7 +12,7 @@
            .content{
                width: 1000px;
                height: auto;   
-               background-color: #212121;
+               background-color: #151515;
                position: relative;
            }
 
@@ -210,7 +210,7 @@
             <div class='order-header-container' style='text-align: right;'>
                 <div class='company-logo'></div>
                 <div class='date-and-id'>
-                    <div class='date-and-id-alt'>Date: <b>". $order->payment_date ."</b></div> 
+                    <div class='date-and-id-alt'>Date (CET): <b>". $order->payment_date ."</b></div> 
                     <div class='date-and-id-alt'>Receipt Number: <b>". $order->id ."</b></div> 
                     <div class='date-and-id-alt'>Transaction ID: <b>". $order->braintree_id ."</b></div> 
                 </div> 

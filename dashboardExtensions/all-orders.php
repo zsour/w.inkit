@@ -226,10 +226,7 @@
                     <?php
                         if($order->shipped == 0):
                     ?>
-                    <form action="">
-
-                    </form>
-                    <div class="all-orders-setup-buttons-button important-button">
+                    <div class="all-orders-setup-buttons-button important-button" onclick="Modal.sendShippingInfo(<?= $order->id; ?>);">
                         <div class="button-text-align">UPDATE SHIPPING STATUS</div>
                     </div>
                     <?php
