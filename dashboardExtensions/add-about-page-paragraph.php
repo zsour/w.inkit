@@ -4,39 +4,39 @@
     $validation = new Validate();
     if(!empty($_POST)){
         $headerTitle = (isset($_POST['headerTitle'])) ? $_POST['headerTitle'] : ""; 
-        $terms = (isset($_POST['terms'])) ? $_POST['terms'] : ""; 
+        $info = (isset($_POST['info'])) ? $_POST['info'] : ""; 
 
         $validation->check($_POST, array(
             'headerTitle' => array(
                 'required' => true
             ),
 
-            'terms' => array(
+            'info' => array(
                 'required' => true
             )
         ));
     
         if($validation->passed()){
-            $currentHeader = DB::getInstance()->findFirst("terms_and_conditions",  [
+            $currentHeader = DB::getInstance()->findFirst("about",  [
                 'conditions' => 'id = ?',
                 'bind' => [$headerTitle]
             ]);
     
-                $decoded = json_decode($currentHeader->terms_conditions);
+                $decoded = json_decode($currentHeader->info_block);
                 if(count($decoded) > 0){
-                    $decoded[] = $terms;
+                    $decoded[] = $info;
                     $updateString = json_encode($decoded);
                 }
                 else{
-                    $updateString = json_encode(array($terms));
+                    $updateString = json_encode(array($info));
                 }
 
-            DB::getInstance()->update('terms_and_conditions', $headerTitle, array(
-                'terms_conditions' => $updateString
+            DB::getInstance()->update('about', $headerTitle, array(
+                'info_block' => $updateString
             ));
     
             $_POST = array();
-            header("Location: create-terms-and-conditions.php");
+            header("Location: about-page-edit.php");
         }
     }  
 ?>
@@ -51,7 +51,7 @@
         
     <div class="center-components" id="center-components"> 
         <div class="dashboardExtensionHeader">
-            Add terms and conditions paragraph
+            Add about page paragraph
         </div>
 
            
@@ -66,14 +66,14 @@
                         }         
         ?>
      
-        <form action="add-terms-and-conditions-paragraph.php" method="POST" id="add-paragraph-form">
+        <form action="add-about-page-paragraph.php" method="POST" id="add-paragraph-form">
             <div class="headerAboveInput">Header For Paragraph</div>
            
 
                         <select name="headerTitle" id="headerTitleSelect">
                         <?php
                                  $db = DB::getInstance();
-                                 $headerTitles = $db->find('terms_and_conditions');
+                                 $headerTitles = $db->find('about');
                                  foreach($headerTitles as $headerTitle):
                         ?>
                         <option value="<?= $headerTitle->id; ?>"><?= $headerTitle->title; ?></option>
@@ -84,7 +84,7 @@
    
 
             <div class="headerAboveInput">Paragraph Content</div>
-            <textarea spellcheck="false" name="terms" id="terms" cols="30" rows="10" placeholder="Type Your Terms And Conditions"><?= (isset($_POST['terms'])) ? trim($_POST['terms']) : ""; ?></textarea>
+            <textarea spellcheck="false" name="info" id="terms" cols="30" rows="10" placeholder="Type Your Information:"><?= (isset($_POST['info'])) ? trim($_POST['info']) : ""; ?></textarea>
 
             
         </form>

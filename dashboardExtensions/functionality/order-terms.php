@@ -35,7 +35,7 @@
                 header("Location: ../create-terms-and-conditions.php");
             }
         }
-        else if(isset($_GET['pos']) && $_GET['pos'] == -1 && $user->isLoggedIn()){
+        else if($_GET['pos'] == -1){
             $termHeaderBelow = DB::getInstance()->findFirst('terms_and_conditions', [
                 'conditions' => "order_of_conditions = ?",
                 'bind' => [$_GET['termOrder'] + 1]
