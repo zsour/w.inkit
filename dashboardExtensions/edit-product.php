@@ -42,7 +42,7 @@
 
 
 
-                    <form method="POST" action="./functionality/functionallity.edit-product.php" id="edit-products" enctype="multipart/form-data">
+                    <form method="POST" action="./functionality/functionality.edit-product.php" id="edit-products" enctype="multipart/form-data">
                         <div class="headerAboveInput">Product Name</div>
                         <input type="text"   id="product-title" name="product-title" placeholder="Type The Name Of Your Product" value="<?= (isset($product->title)) ? $product->title : ""; ?>">
                         <div class="headerAboveInput">Product Price</div>

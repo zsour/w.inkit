@@ -69,4 +69,5 @@
     color: white;
     font-size: 18px;
     font-family: 'Big Shoulders Text', cursive;
+    user-select: none;
 }

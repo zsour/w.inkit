@@ -23,7 +23,6 @@ class NavBarInteraction{
 
     static extendNavStatic(buttonID, altID, transformExtras){
         var alt = document.getElementById(altID);
-        console.log(buttonID);
         
         var arrowAnimation = document.getElementById(buttonID + "-arrow")
         document.getElementById(buttonID).addEventListener('click', () =>{    

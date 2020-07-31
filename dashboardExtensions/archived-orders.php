@@ -206,9 +206,15 @@
                         <div class="button-text-align">RESTORE ORDER</div>
                     </div>
 
-                    <div class="all-orders-setup-buttons-button">
+                    <form action="./edit-customer-information.php" method="post" id="edit-customer-information-<?= $order->id; ?>">
+                        <input type="hidden" name="orderId" value="<?= $order->id; ?>">
+                        <input type="hidden" name="fromHeader" value="1">
+                    </form>
+
+                    <div class="all-orders-setup-buttons-button" onclick="document.getElementById('edit-customer-information-<?= $order->id; ?>').submit();">
                         <div class="button-text-align">EDIT INFORMATION</div>
                     </div>
+
 
                     <div class="all-orders-setup-buttons-button">
                         <div class="button-text-align">EMAIL CUSTOMER</div>

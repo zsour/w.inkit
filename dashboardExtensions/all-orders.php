@@ -154,6 +154,7 @@
                     <div class="all-orders-customer-information-block-alt">Country: <b><?= $order->country; ?></b></div>
                     <div class="all-orders-customer-information-block-alt">Zip: <b><?= $order->zip; ?></b></div>
                     <div class="all-orders-customer-information-block-alt">Email: <b><?= $order->email; ?></b></div>
+                    <div class="all-orders-customer-information-block-alt">Phone: <b><?= $order->phone; ?></b></div>
                     <div class="all-orders-customer-information-block-alt">Current Order Status: <b class="green-text">Paid</b></div>
                     <div class="all-orders-customer-information-block-alt">Current Shipping Status: <b><?php
                         if($order->shipped == 1){
@@ -211,8 +212,12 @@
                 <?php
                     endif;
                 ?>
-                
-                    <div class="all-orders-setup-buttons-button">
+                    <form action="./edit-customer-information.php" method="post" id="edit-customer-information-<?= $order->id; ?>">
+                        <input type="hidden" name="orderId" value="<?= $order->id; ?>">
+                        <input type="hidden" name="fromHeader" value="0">
+                    </form>
+
+                    <div class="all-orders-setup-buttons-button" onclick="document.getElementById('edit-customer-information-<?= $order->id; ?>').submit();">
                         <div class="button-text-align">EDIT INFORMATION</div>
                     </div>
 
