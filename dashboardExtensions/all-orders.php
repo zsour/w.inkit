@@ -197,7 +197,7 @@
                 <div class="all-orders-setup-buttons-container">
 
                 <?php
-                    if(!$order->refunded && !empty(json_decode($order->cart))):
+                    if(!empty(json_decode($order->cart))):
                 ?>
                     <form action="functionality/refund-order.php" method="post" id="refundOrder<?= $order->id; ?>">
                         <input type="hidden" name="orderId" value="<?= $order->braintree_id; ?>">

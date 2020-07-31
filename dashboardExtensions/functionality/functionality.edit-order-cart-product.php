@@ -32,18 +32,21 @@
                 foreach($oldCart as $key => $item){
                     if($item->id == $currentProduct->id){
                         if($_POST['newQuantity'] == 0){
-                            unset($oldCart[$key]);
+                            print_r($key);
+                                unset($oldCart[$key]);
                             break;
                         }else{
-                            $item->quantity = $_POST['newQuantity'];
+                            $item->quantity = (int)$_POST['newQuantity'];
                         }   
                     }
                 }
-
-                $newCart = json_encode($oldCart);
+                $newCart = [];
+                foreach($oldCart as $item){
+                    array_push($newCart, $item);
+                }
 
                 DB::getInstance()->update('orders', $currentOrder->id, array(
-                    'cart' => $newCart
+                    'cart' => json_encode($newCart)
                 ));
 
                 if($currentOrder->refunded){

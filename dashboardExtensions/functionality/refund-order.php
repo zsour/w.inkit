@@ -35,12 +35,14 @@
                     }
 
                     DB::getInstance()->update('orders', $order->id, array(
+                        'cart' => json_encode(array()),
                         'archived' => 1,
-                        'refunded' => json_encode($temp);
+                        'refunded' => json_encode($temp)
                     ));
 
                 }else{
                     DB::getInstance()->update('orders', $order->id, array(
+                        'cart' => json_encode(array()),
                         'archived' => 1,
                         'refunded' => $order->cart
                     ));

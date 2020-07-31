@@ -179,14 +179,18 @@
                     <div class="all-orders-customer-information-block-alt">Total Profit: <b class="green-text">
                     <?php
                           if($totalProductionValue > 0 && !$productionValueCheck){
-                                if($priceCounter == 0){
-                                    echo("Order Refunded - No Profit");
-                                }else{
-                                    echo($priceCounter - $totalProductionValue);
-                                }
-                         }else{
-                            echo('?');
-                         }
+                            if(!$priceCounter){
+                                echo("Order Refunded - No Profit");
+                            }else{
+                                echo($priceCounter - $totalProductionValue);
+                            }
+                        }else{
+                            if(!$priceCounter){
+                                echo("Order Refunded - No Profit");
+                            }else{
+                                echo('?');
+                            } 
+                        }
                         ?>
                     &euro;</b></div>
                     <div class="all-orders-customer-information-block-alt">Braintree ID: <b style="user-select: all; display: inline-block;"><?= $order->braintree_id ?></b></div>
