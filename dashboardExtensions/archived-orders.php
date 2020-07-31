@@ -216,9 +216,9 @@
                     </div>
 
 
-                    <div class="all-orders-setup-buttons-button">
+                    <a class="all-orders-setup-buttons-button" href="mailto:<?= $order->email; ?>">
                         <div class="button-text-align">EMAIL CUSTOMER</div>
-                    </div>
+                    </a>
 
                     <?php
                         if($order->shipped == 0 && !empty(json_decode($order->cart))):
