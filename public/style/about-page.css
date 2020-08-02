@@ -41,7 +41,7 @@
 }
 
 .about-paragraph-content{
-    width: 900px;
+    width: 1200px;
     display: inline-block;
     vertical-align: top;
 }
@@ -69,13 +69,49 @@
 
 .image-settings-container{
     width: 100%;
-    height: 0px;
+    max-height: 0px;
     background-color: white;
     border-bottom: solid 0.5px rgba(0, 0, 0, 0.15);
-    transition: height 0.4s;
+    transition: max-height 0.4s;
     line-height: 50px;
     overflow: hidden;
 }
+
+.add-new-image-containter{
+    width: auto;
+    height: 50px;
+    position: relative;
+    line-height: 50px;
+}
+
+.add-new-image-btn{
+    width: 150px;
+    height: 30px;
+    background-color: #424242;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-radius: 40px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.add-new-image-btn-text{
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.add-new-image-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
 
 .image-settings-alt-header{
     height: 30px;

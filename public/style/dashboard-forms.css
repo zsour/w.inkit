@@ -154,3 +154,16 @@
     height: 0px; 
     transition: height 0.2s;
 }
+
+.company-information-input-field{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    border: none;
+    padding-left: 10px;
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.25);
+}

@@ -40,19 +40,8 @@
                      
                         <div class="about-content-header">
                             <p class="about-header-text"><?= $aboutHeader->title; ?></p>
-                            <span class="add-image-icon" id="imgSettingsIcon"></span>
                         </div>
-                        <div class="image-settings-container" id="imgSettingsContainer">
-                            <div class="image-settings-alt-header">Image type:</div>
-                            <select name="imgType" id="imgType">
-                                <option value="wraped" selected>Wraped</option>
-                                <option value="header">Header</option>
-                            </select>                        
-                        </div>
-
-                         <div id="imageContainer">
-                            
-                         </div>
+                  
 
                          <div class="about-paragraph-content">
                             <?php

@@ -16,6 +16,10 @@
         ]);
 
         if($order){
+            $company = DB::getInstance()->findFirst('company', [
+                'conditions' => 'id = 0'
+            ]);
+            
             $body = "
             <html>
      
@@ -202,11 +206,10 @@
                     <div class='order-header'>
                         <div class='order-header-container'>
                             <div class='company-info'> 
-                                <div class='company-info-alt'>Company Name: <b>Kubkompaniet</b></div> 
-                                <div class='company-info-alt'>Address: <b>Gråhallsvägen 23, 432 47, Varberg, Sweden</b></div> 
-                                <div class='company-info-alt'>Phone: <b>0739808116</b></div> 
-                                <div class='company-info-alt'>Email: <b>daniel.karlsson36@outlook.com</b></div> 
-                                <div class='company-info-alt'>Organization Number: <b>123456789</b></div> 
+                                <div class='company-info-alt'>Company Name: <b>". $company->company_name ."</b></div> 
+                                <div class='company-info-alt'>Address: <b>". $company->address .", ". $company->zip .", ". $company->city .", ". $company->country ."</b></div> 
+                                <div class='company-info-alt'>Email: <b>" . $company->email . "</b></div> 
+                                <div class='company-info-alt'>Organization Number: <b>" . $company->organization_num . "</b></div>
                                 <div class='company-info-alt'><b>If you have any questions regarding shipping, contact us using the details above.</b></div> 
                             </div> 
 

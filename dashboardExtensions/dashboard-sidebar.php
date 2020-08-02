@@ -61,6 +61,9 @@
                     <div class="alt" onclick="Navigation.loadComponents('about-page-edit.php');">
                         <div class="alt-text">About</div>
                     </div>
+                    <div class="alt" onclick="Navigation.loadComponents('add-company-information.php');">
+                        <div class="alt-text">Company Information</div>
+                    </div>
             </div>
 
             <div class="menu-field" onclick="document.location.href='logout.php';">
