@@ -54,22 +54,45 @@
                             'bind' => [$_GET['product_id']]
                         ]);
                         $productImages = json_decode($product->image);
-                        $showcaseImage = explode("../", $productImages[0])[1];
+                        $singleImage = false;
+                        if(count($productImages) > 1){
+                            $singleImage = true;
+                        }
                     ?>
                         
                         <div class="read-more-container">
+                        <?php
+                            if($singleImage):
+                        ?>
                         <div class="products-display-slideshow-left-btn-container">
                             <div class="products-display-slideshow-left-btn"></div>
                         </div>
+                        <?php
+                            endif;
+                        ?>
                             <div class="products-display-slideshow" id="slideshow">
-                                <div class="products-display-slideshow-img" style="background-image: url('<?= $showcaseImage; ?>');"></div>
-                                <div class="products-display-slideshow-img"></div>
-                                <div class="products-display-slideshow-img" style="background-image: url('public/img/logo.png');"></div>
-                                <div class="products-display-slideshow-img"></div>
+                                <?php
+                                    foreach($productImages as $showcaseImage):
+                                    $showcaseImage = explode("../", $showcaseImage);
+                                ?>
+                                <div class="products-display-slideshow-img<?php
+                                    if(!$singleImage){
+                                        echo(' large-product-image');
+                                    }
+                                ?>" style="background-image: url('<?= $showcaseImage[1]; ?>');"></div>
+                                <?php
+                                    endforeach;
+                                ?>
                             </div>
+                        <?php
+                            if($singleImage):
+                        ?>
                         <div class="products-display-slideshow-right-btn-container">
                             <div class="products-display-slideshow-right-btn" onclick="slideShow.slideshowMoveRight();"></div>
                         </div>
+                        <?php
+                            endif;
+                        ?>
 
 
                             <div class="read-more-buttons">
@@ -140,15 +163,15 @@
                                 
                             <div class="products-product-img" style="background-image: url('<?= $showcaseImage; ?>')"> </div>
 
-                                <div class="product-info-container">
-                                <div class="products-produt-title"><?= sanitize($product->title); ?></div>
-                                <div class="products-produt-price"><?= sanitize($product->price); ?> &euro;</div>
-                                </div>
-                               
+                            <div class="product-product-expand-container">
+                                
+                            </div>
+                                <!--
                                 <div class="products-product-button-container">
                                 <form action="frontendFunctionality/addToCart.php" method="POST" id="addToCartProduct<?= $product->id; ?>">
                                     <input type="hidden" name="product_id" value="<?= $product->id; ?>">
                                 </form>
+
                                 <div class="products-product-add-to-cart" onclick="document.getElementById('addToCartProduct<?= $product->id; ?>').submit();">
                                 <div class="products-product-add-to-cart-text">ADD TO CART</div>
                                 </div>
@@ -156,7 +179,7 @@
                                 <div class="products-product-read-more" onclick="window.location.href='products.php?product_id=<?= $product->id; ?>';">
                                 <div class="products-product-read-more-text">READ MORE</div>
                                 </div>
-                                </div>
+                                </div>-->
                             </div>
                     <?php 
                             endforeach;
