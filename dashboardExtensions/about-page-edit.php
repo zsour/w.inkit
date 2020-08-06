@@ -18,7 +18,7 @@
 
         <div class="edit-terms-and-conditions-container">
             <div class="edit-terms-and-conditions-title">
-                <div class="edit-terms-and-conditions-title-text">Edit terms and conditions</div>
+                <div class="edit-terms-and-conditions-title-text">Edit about page</div>
             </div>
 
             <div class="edit-terms-and-conditions-button-container">

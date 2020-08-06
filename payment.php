@@ -71,7 +71,7 @@
                     <div id="paypal-container"></div>
                     <div id="dropin-container"></div>
                     <div class="btn-container">
-                        <div id="submit-button"><span class="submit-button-icon"></span><div class="submit-btn-text">Pay</div></div>
+                        <div id="submit-button"><span class="submit-button-icon"></span><div class="submit-btn-text">PAY</div></div>
                     </div>
             
             <form action="submitPayment.php" method="post" id="submitPayment">

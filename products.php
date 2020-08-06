@@ -41,7 +41,13 @@
                     </div>
 
                     <div class="product-shopping-cart" onclick="window.location.href = 'cart';">
-                    <div class="shopping-cart-notice" style="filter: invert(0%);"></div>
+                    <?php
+                                    if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])):
+                                ?>
+                                <div class="shopping-cart-notice"></div>
+                                <?php
+                                    endif;
+                                ?>
                     </div>
                 </div>
 
@@ -61,38 +67,38 @@
                     ?>
                         
                         <div class="read-more-container">
-                        <?php
-                            if($singleImage):
-                        ?>
+                      
                         <div class="products-display-slideshow-left-btn-container">
+                            <?php
+                                if($singleImage):
+                            ?>
                             <div class="products-display-slideshow-left-btn"></div>
+                            <?php
+                                endif;
+                            ?>
                         </div>
-                        <?php
-                            endif;
-                        ?>
+                        
                             <div class="products-display-slideshow" id="slideshow">
                                 <?php
                                     foreach($productImages as $showcaseImage):
                                     $showcaseImage = explode("../", $showcaseImage);
                                 ?>
-                                <div class="products-display-slideshow-img<?php
-                                    if(!$singleImage){
-                                        echo(' large-product-image');
-                                    }
-                                ?>" style="background-image: url('<?= $showcaseImage[1]; ?>');"></div>
+                                <div class="products-display-slideshow-img" style="background-image: url('<?= $showcaseImage[1]; ?>');"></div>
                                 <?php
                                     endforeach;
                                 ?>
                             </div>
-                        <?php
-                            if($singleImage):
-                        ?>
+                        
                         <div class="products-display-slideshow-right-btn-container">
+                            <?php
+                                if($singleImage):
+                            ?>
                             <div class="products-display-slideshow-right-btn" onclick="slideShow.slideshowMoveRight();"></div>
+                            <?php
+                                endif;
+                            ?>
                         </div>
-                        <?php
-                            endif;
-                        ?>
+                        
 
 
                             <div class="read-more-buttons">
@@ -159,27 +165,29 @@
                                 $productImages = json_decode($product->image);
                                 $showcaseImage = explode("../", $productImages[0])[1];
                     ?>
-                            <div class="products-product">
+                            <div class="products-product" onclick="window.location.href='products.php?product_id=<?= $product->id; ?>';">
                                 
                             <div class="products-product-img" style="background-image: url('<?= $showcaseImage; ?>')"> </div>
 
                             <div class="product-product-expand-container">
-                                
+                                    <div class="product-product-expand-title"><?= $product->title; ?></div>
+
+                                    <div class="product-product-expand-price-container">
+                                        <?php
+                                            if(isset($product->list_price) && $product->list_price > $product->price):
+                                        ?>         
+                                            <div class="product-product-expand-price" style="color: rgb(214, 60, 60);"><?= $product->price; ?> &euro;</div>
+                                            <span class="product-product-expand-list-price"><?= $product->list_price; ?> &euro;</span>
+                                        <?php
+                                            else:
+                                        ?>
+                                            <div class="product-product-expand-price"><?= $product->price; ?> &euro;</div>
+                                        <?php
+                                            endif;
+                                        ?>
+                                    </div>
                             </div>
-                                <!--
-                                <div class="products-product-button-container">
-                                <form action="frontendFunctionality/addToCart.php" method="POST" id="addToCartProduct<?= $product->id; ?>">
-                                    <input type="hidden" name="product_id" value="<?= $product->id; ?>">
-                                </form>
-
-                                <div class="products-product-add-to-cart" onclick="document.getElementById('addToCartProduct<?= $product->id; ?>').submit();">
-                                <div class="products-product-add-to-cart-text">ADD TO CART</div>
-                                </div>
-
-                                <div class="products-product-read-more" onclick="window.location.href='products.php?product_id=<?= $product->id; ?>';">
-                                <div class="products-product-read-more-text">READ MORE</div>
-                                </div>
-                                </div>-->
+                        
                             </div>
                     <?php 
                             endforeach;

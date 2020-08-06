@@ -1,7 +1,8 @@
 #dropin-container{
-    width: 900px;
+    width: 1100px;
     margin-left: 50px;
     margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .btn-container{
@@ -18,7 +19,7 @@
     color: white;
     text-align: right;
     line-height: 40px;
-    margin-right: 10px;
+    margin-right: 12px;
     font-family: 'Josefin Sans';
     transform: translateY(3px);
     vertical-align: middle;
@@ -64,4 +65,35 @@
 
     margin-left: 10px;
     line-height: 40px;
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+    #dropin-container{
+        width: 900px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #dropin-container{
+        width: 650px;
+    }
+}
+
+@media only screen and (max-width: 767px) {  
+    #dropin-container{
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    #dropin-container{
+        width: 340px;
+        margin-left: 20px;
+    }
+
+    #submit-button{
+        margin-right: 20px;
+    }
 }
