@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 02 aug 2020 kl 23:56
--- Serverversion: 10.4.11-MariaDB
--- PHP-version: 7.2.30
+-- Tid vid skapande: 07 aug 2020 kl 00:58
+-- Serverversion: 10.4.13-MariaDB
+-- PHP-version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +56,31 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL,
   `parent` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `company`
+--
+
+CREATE TABLE `company` (
+  `id` int(11) NOT NULL,
+  `full_name` text NOT NULL,
+  `address` text NOT NULL,
+  `organization_num` text NOT NULL,
+  `email` text NOT NULL,
+  `country` text NOT NULL,
+  `city` text NOT NULL,
+  `zip` text NOT NULL,
+  `company_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `company`
+--
+
+INSERT INTO `company` (`id`, `full_name`, `address`, `organization_num`, `email`, `country`, `city`, `zip`, `company_name`) VALUES
+(0, 'Daniel Karlsson', 'Gråhallsvägen 23', '200004241337', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '432 47', 'Kubkompaniet');
 
 -- --------------------------------------------------------
 
@@ -214,6 +239,12 @@ ALTER TABLE `about`
 -- Index för tabell `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index för tabell `company`
+--
+ALTER TABLE `company`
   ADD PRIMARY KEY (`id`);
 
 --
