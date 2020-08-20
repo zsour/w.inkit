@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 07 aug 2020 kl 00:58
--- Serverversion: 10.4.13-MariaDB
--- PHP-version: 7.4.8
+-- Tid vid skapande: 20 aug 2020 kl 22:52
+-- Serverversion: 10.4.11-MariaDB
+-- PHP-version: 7.2.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `info_block`, `title`, `live`, `order_of_info`, `image`, `imageStyle`) VALUES
-(1, '[\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\",\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"]', 'About Me', 0, 1, '', ''),
+(1, '[\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"]', 'About Me', 0, 1, '', ''),
 (7, '', 'My Art', 0, 2, '', '');
 
 -- --------------------------------------------------------
@@ -72,15 +72,17 @@ CREATE TABLE `company` (
   `country` text NOT NULL,
   `city` text NOT NULL,
   `zip` text NOT NULL,
-  `company_name` text NOT NULL
+  `company_name` text NOT NULL,
+  `instagram_link` text NOT NULL,
+  `twitter_link` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumpning av Data i tabell `company`
 --
 
-INSERT INTO `company` (`id`, `full_name`, `address`, `organization_num`, `email`, `country`, `city`, `zip`, `company_name`) VALUES
-(0, 'Daniel Karlsson', 'Gråhallsvägen 23', '200004241337', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '432 47', 'Kubkompaniet');
+INSERT INTO `company` (`id`, `full_name`, `address`, `organization_num`, `email`, `country`, `city`, `zip`, `company_name`, `instagram_link`, `twitter_link`) VALUES
+(0, 'Daniel Karlsson', 'Gråhallsvägen 23', '20000424-XXXX', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '432 47', 'Kubkompaniet', 'https://www.instagram.com/w.inkit/', '');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,9 @@ INSERT INTO `orders` (`id`, `cart`, `email`, `country`, `city`, `phone`, `zip`, 
 (57, '[]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f235d6f47189', 1, 1, 'Daniel Karlsson', '75x2jnq6', '2020/07/31 01:53:26', 0, '[{\"id\":\"45\",\"quantity\":2,\"priceDuringOrder\":\"79.00\"},{\"id\":\"42\",\"quantity\":2,\"priceDuringOrder\":\"68.98\"}]'),
 (58, '[]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f2409ed89f25', 1, 1, 'Daniel Karlsson', 'edhmrqfg', '2020/07/31 14:09:28', 0, '[{\"id\":\"42\",\"quantity\":2,\"priceDuringOrder\":\"68.98\"},{\"id\":\"45\",\"quantity\":2,\"priceDuringOrder\":\"79.00\"},{\"id\":\"44\",\"quantity\":2,\"priceDuringOrder\":\"79.00\"}]'),
 (59, '[]', 'daniel.karlsson36@outlok.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f240a1d8e277', 1, 1, 'Daniel Karlsson', 'cjg6zdhc', '2020/07/31 14:10:15', 0, '[{\"id\":\"43\",\"quantity\":2,\"priceDuringOrder\":\"79.00\"},{\"id\":\"44\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"}]'),
-(60, '[]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f240a499a905', 1, 1, 'Daniel Karlsson', 'pv07qmnp', '2020/07/31 14:10:58', 0, '[{\"id\":\"43\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"},{\"id\":\"42\",\"quantity\":1,\"priceDuringOrder\":\"68.98\"},{\"id\":\"44\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"},{\"id\":\"45\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"}]');
+(60, '[]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f240a499a905', 1, 1, 'Daniel Karlsson', 'pv07qmnp', '2020/07/31 14:10:58', 0, '[{\"id\":\"43\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"},{\"id\":\"42\",\"quantity\":1,\"priceDuringOrder\":\"68.98\"},{\"id\":\"44\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"},{\"id\":\"45\",\"quantity\":1,\"priceDuringOrder\":\"79.00\"}]'),
+(61, '[{\"id\":\"42\",\"quantity\":\"2\",\"priceDuringOrder\":\"68.98\"}]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f36dc952f545', 1, 0, 'Daniel Karlsson', 'pnsnqxzf', '2020/08/14 20:49:15', 0, '0'),
+(62, '[{\"id\":\"42\",\"quantity\":1,\"priceDuringOrder\":\"68.98\"}]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '43247', 'Gråhallsvägen 23', '5f3e6f5de7869', 1, 0, 'Daniel Karlsson', '28wvfn4m', '2020/08/20 14:42:33', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -156,18 +160,20 @@ CREATE TABLE `products` (
   `height` decimal(10,2) NOT NULL,
   `weight` decimal(10,2) NOT NULL,
   `production_value` decimal(10,2) NOT NULL,
-  `quantity` int(11) NOT NULL
+  `quantity` int(11) NOT NULL,
+  `live` int(5) NOT NULL DEFAULT 1,
+  `order_of_product` int(5) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumpning av Data i tabell `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `price`, `list_price`, `category`, `image`, `description`, `archived`, `created`, `updated`, `width`, `height`, `weight`, `production_value`, `quantity`) VALUES
-(42, 'Acrobatic - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '68.98', '79.99', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b770fb035.13860806.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-30 01:10:31', '0.00', '0.00', '0.30', '30.00', 10),
-(43, 'Your Future - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b8948a724.76759272.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:28', '0.00', '0.00', '0.00', '30.00', 2),
-(44, 'Moon(shine)', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6bc1b27901.25603008.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:34', '0.00', '0.00', '0.00', '30.00', 2),
-(45, 'Freebird - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b9d658e11.22011587.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:40', '0.00', '0.00', '0.00', '30.00', 5);
+INSERT INTO `products` (`id`, `title`, `price`, `list_price`, `category`, `image`, `description`, `archived`, `created`, `updated`, `width`, `height`, `weight`, `production_value`, `quantity`, `live`, `order_of_product`) VALUES
+(42, 'Acrobatic - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '68.98', '79.99', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b770fb035.13860806.jpg\",\"..\\/public\\/img\\/uploadedImages\\/5f3707b6ee8046.73694834.png\",\"..\\/public\\/img\\/uploadedImages\\/5f3ecdba957822.20627819.png\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-08-20 21:23:38', '0.00', '0.00', '0.30', '30.00', 10, 1, 1),
+(43, 'Your Future - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b8948a724.76759272.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:28', '0.00', '0.00', '0.00', '30.00', 2, 1, 4),
+(44, 'Moon(shine)', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6bc1b27901.25603008.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:34', '0.00', '0.00', '0.00', '30.00', 2, 1, 2),
+(45, 'Freebird - Limited Linoleum Edition Linocut Block Handprinted on Hahnem?hle Paper', '79.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5e8c6b9d658e11.22011587.jpg\"]', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '0000-00-00 00:00:00', '2020-07-04 19:36:40', '0.00', '0.00', '0.00', '30.00', 5, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -182,13 +188,6 @@ CREATE TABLE `terms_and_conditions` (
   `terms_conditions` text CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
   `live` int(5) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumpning av Data i tabell `terms_and_conditions`
---
-
-INSERT INTO `terms_and_conditions` (`id`, `order_of_conditions`, `title`, `terms_conditions`, `live`) VALUES
-(23, 1, 'Test', '[\"Test\"]', 0);
 
 -- --------------------------------------------------------
 
@@ -211,7 +210,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `salt`, `name`, `joined`, `groups`) VALUES
-(35, 'z_sour', '8ec28773ceee96afd633df261cae91356cd6913996a002274a2f8c49f4e873f1', 'c3b5040b14236b9ea214209eb08e69df', 'Daniel Karlsson', '2020-05-16 21:35:14', 1);
+(35, 'z_sour', 'a5c3bc656560d6e55165489a1cc3066b2a3c8163f20ca85d628c8d0fcaedda08', 'b434541e118fed9d15acab89eef1f48b', 'Daniel Karlsson', '2020-05-16 21:35:14', 1);
 
 -- --------------------------------------------------------
 
@@ -309,7 +308,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT för tabell `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT för tabell `products`
@@ -321,7 +320,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT för tabell `terms_and_conditions`
 --
 ALTER TABLE `terms_and_conditions`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT för tabell `users`
