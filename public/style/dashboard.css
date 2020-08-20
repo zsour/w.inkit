@@ -169,7 +169,7 @@
 .modal-content{
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
-    top: 40%;
+    top: 45%;
     left: 50%;
     cursor: default;
     opacity: 0;
