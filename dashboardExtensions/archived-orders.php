@@ -220,6 +220,19 @@
                         <div class="button-text-align">EMAIL CUSTOMER</div>
                     </a>
 
+                    <form action="functionality/remove-order.php" method="post" id="removeOrder<?= $order->id; ?>">
+                        <input type="hidden" value="<?= $order->id; ?>" name="orderId">
+                    </form>
+
+                    <?php
+                        if((!$order->refunded && $order->shipped == 1) || ($order->refunded && empty(json_decode($order->cart))) || ($order->refunded && !empty(json_decode($order->cart)) && $order->shipped == 1)):
+                    ?>
+                    <div class="all-orders-setup-buttons-button" style="background-color: #d63737;" onclick="Modal.securityCheckModal('removeOrder<?= $order->id; ?>', 'Are you sure you want to remove the order?');">
+                        <div class="button-text-align">REMOVE ORDER</div>
+                    </div>
+                    <?php
+                        endif;
+                    ?>
                     <?php
                         if($order->shipped == 0 && !empty(json_decode($order->cart))):
                     ?>
