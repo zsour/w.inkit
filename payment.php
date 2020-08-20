@@ -31,6 +31,7 @@
         <script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
         <script src="https://js.braintreegateway.com/web/3.62.1/js/client.min.js"></script>
         <script src="https://js.braintreegateway.com/web/3.62.1/js/data-collector.min.js"></script>
+        <title>w.inkit | Payment</title>
     </head>
 
 

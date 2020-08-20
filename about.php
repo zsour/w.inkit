@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="./public/style/about-page.css">
+        <title>w.inkit | About</title>
     </head>
 
 

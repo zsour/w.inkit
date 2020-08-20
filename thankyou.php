@@ -293,7 +293,7 @@
         <?php
             include("includes/head.php");
         ?>    
-        
+        <title>w.inkit | Thank You</title>
     </head>
 
 

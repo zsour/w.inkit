@@ -65,7 +65,7 @@
         <?php
             include("includes/head.php");
         ?>    
-        
+        <title>w.inkit | Cart</title>
     </head>
 
 

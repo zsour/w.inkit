@@ -9,7 +9,7 @@
         <?php
             include("includes/head.php");
         ?>    
-        
+        <title>w.inkit | Prints By Malin Wejrot</title>
     </head>
 
 

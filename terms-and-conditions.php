@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="./public/style/terms-and-conditions.css">
+        <title>w.inkit | Terms & Conditions</title>
     </head>
 
 

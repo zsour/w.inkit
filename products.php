@@ -18,6 +18,7 @@
             include("includes/head.php");
         ?>    
         <link rel="stylesheet" href="./public/style/dashboard.css">
+        <title>w.inkit | All Products</title>
     </head>
 
 

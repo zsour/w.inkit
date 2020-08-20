@@ -29,6 +29,7 @@
           include("includes/head.php");
         ?>    
         <link rel="stylesheet" href="./public/style/contact.css">
+        <title>w.inkit | Contact</title>
     </head>
 
 
