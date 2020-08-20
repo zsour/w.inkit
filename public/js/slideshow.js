@@ -1,47 +1,52 @@
 
 class Slideshow{
     constructor(){
-        this.imgCount = document.getElementById("slideshow").querySelectorAll(".products-display-slideshow-img");
-       
+        this.allImg = document.getElementById('slideshow').querySelectorAll(".products-display-slideshow-img");
+        this.allImg[0].style.display = "block";
         this.imgArray = [];
-        this.imgCount.forEach(element => {
+        this.allImg.forEach((element) => {
             this.imgArray.push(element);
         });
-        
-        this.currentSlide = this.imgArray[0];
-        this.currentSlide.style.left = "0px";
-        this.currentSlide.style.display = "inline-block";
-        
+
+        this.currentImage = this.imgArray[0];
     }
 
-    slideshowMoveRight(){
-       var currentSlideNum = this.imgArray.indexOf(this.currentSlide);
+    slideshowMoveRight(){  
+        var currentImgIndex = this.imgArray.indexOf(this.currentImage);
 
-       this.currentSlide.style.display = "inline-block";
-       this.currentSlide.style.left = "-110%";
-        
-        if(currentSlideNum < (this.imgArray.length - 1)){
-            currentSlideNum += 1;
+        if((currentImgIndex + 1) == this.imgArray.length){
+            currentImgIndex = 0;
         }else{
-        currentSlideNum = 0;
+            currentImgIndex += 1;
         }
-       
 
-        this.currentSlide = this.imgArray[currentSlideNum];
-        this.currentSlide.style.display = "inline-block";
-        this.currentSlide.style.left = '0px'; 
+        this.currentImage.style.display = "none";
+        this.currentImage = this.imgArray[currentImgIndex];
+        console.log(currentImgIndex);
+        
+        this.currentImage.style.display = "block";
+    }
 
-        setTimeout(() => { 
-            if(currentSlideNum == 0){
-                this.imgArray[this.imgArray.length-1].style.display = "none";    
-                this.imgArray[this.imgArray.length-1].style.left = "110%";
-            }else{
-                this.imgArray[currentSlideNum-1].style.display = "none";
-                this.imgArray[currentSlideNum-1].style.left = "110%";
-            }
-        }, 400);
+    slideshowMoveLeft(){
+        var currentImgIndex = this.imgArray.indexOf(this.currentImage);
+
+        if((currentImgIndex - 1) == -1){
+            currentImgIndex = this.imgArray.length - 1;
+        }else{
+            currentImgIndex -= 1;
+        }
+
+        this.currentImage.style.display = "none";
+        this.currentImage = this.imgArray[currentImgIndex];
+        console.log(currentImgIndex);
+        
+        this.currentImage.style.display = "block";
+    }
+
+    largeOnClick(){
+        
     }
 }
 
 
-var slideShow = new Slideshow();
+var slideshow = new Slideshow();

@@ -13,6 +13,8 @@
     $address = (isset($_POST['address'])) ? $_POST['address'] : (!empty($currentCompany->address) ? $currentCompany->address : ""); 
     $organizationNum = (isset($_POST['organizationNum'])) ? $_POST['organizationNum'] : (!empty($currentCompany->organization_num) ? $currentCompany->organization_num : ""); 
     $companyName = (isset($_POST['companyName'])) ? $_POST['companyName'] : (!empty($currentCompany->company_name) ? $currentCompany->company_name : ""); 
+    $instagramLink = (isset($_POST['instagramLink'])) ? $_POST['instagramLink'] : (!empty($currentCompany->instagram_link) ? $currentCompany->instagram_link : ""); 
+    $twitterLink = (isset($_POST['twitterLink'])) ? $_POST['twitterLink'] : (!empty($currentCompany->twitter_link) ? $currentCompany->twitter_link : ""); 
 
     $validation = new Validate();
 
@@ -62,7 +64,9 @@
                 'organization_num' => $organizationNum,
                 'country' => $country,
                 'city' => $city,
-                'zip' => $zip
+                'zip' => $zip,
+                'instagram_link' => $instagramLink,
+                'twitter_link' => $twitterLink
             ]); 
                         
             $_POST = array();
@@ -114,6 +118,10 @@
             <input type="text" spellcheck="false" class="company-information-input-field" name="address" placeholder="Type Your Company Address" value="<?= $address; ?>">
             <div class="headerAboveInput">Organization Number:</div>
             <input type="text" spellcheck="false" class="company-information-input-field" name="organizationNum" placeholder="Type Your Company Organization Number" value="<?= $organizationNum; ?>">
+            <div class="headerAboveInput">Instagram Link:</div>
+            <input type="text" spellcheck="false" class="company-information-input-field" name="instagramLink" placeholder="Type Instagram Profile Link" value="<?= $instagramLink; ?>">
+            <div class="headerAboveInput">Twitter Link:</div>
+            <input type="text" spellcheck="false" class="company-information-input-field" name="twitterLink" placeholder="Type Twitter Profile Link" value="<?= $twitterLink; ?>">
         </form>
 
         <div class="add-terms-and-conditions-submit-btn" onclick="document.getElementById('add-company-information-form').submit();">

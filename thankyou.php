@@ -279,7 +279,7 @@
     
             </html>
         ";
-        mail($order->email, "Thank you for your order! - Here's your receipt.", $body, "From: no-reply@kubkompaniet.com\r\n" . "Content-Type: text/html; charset=UTF-8\r\n");
+        mail($order->email, "Thank you for your order! - Here's your receipt.", $body, "From: no-reply@winkitprints.com\r\n" . "Content-Type: text/html; charset=UTF-8\r\n");
         unset($_SESSION['order_id']);
         }
        }else{
@@ -334,6 +334,9 @@
                                 <div class="thankyou-subtitle">Shipping information will be sent to your email as soon as your package is sent.</div>
                         </div>
                     </div>
+                    <?php include_once('includes/footer.php'); ?>
+        </div>
+    </div>   
     </body>
 
     </html>

@@ -226,10 +226,10 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    display: inline-block;
-    transition: left 0.4s;
+    display: none;
     position: absolute;
-    left: 110%;
+    left: 0px;
+    cursor: zoom-in;
 }
 
 .products-display-slideshow-mini-showcase{

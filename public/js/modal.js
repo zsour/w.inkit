@@ -1,5 +1,5 @@
 class Modal{
-        static imgModal(w, h, src){
+        static imgModal(w, h, src, content){
             var modalBG = document.getElementById("modalBG");
             var modalContent = document.getElementById("modalContent");
             modalBG.style.backgroundColor = "rgba(0,0,0,0.8)";
@@ -11,6 +11,10 @@ class Modal{
             imgTag.src = src;
             modalContent.appendChild(imgTag);
             modalContent.style.opacity = 1;
+
+            if(content){
+                document.getElementById(content).style.overflow = 'hidden';
+            }
         }
 
         static securityCheckModal(formId, message){
@@ -169,7 +173,7 @@ class Modal{
             modalContent.style.opacity = 1;   
         }
 
-        static closeModal(){
+        static closeModal(content){
             var modalBG = document.getElementById("modalBG");
             var modalContent = document.getElementById("modalContent");
             modalBG.style.backgroundColor = "rgba(0,0,0,0)";
@@ -179,5 +183,9 @@ class Modal{
                 while (modalContent.firstChild) {
                     modalContent.removeChild(modalContent.firstChild);
                 }
+
+            if(content){
+                document.getElementById(content).style.overflow = '';
+            }
         }
 }

@@ -263,7 +263,7 @@
                             <div class="cart-checkout-continue">
                                 <div class="cart-checkout-continue-accept-policy">  
                                     <input type="checkbox" class="cart-input-checkbox" id="policy-checkbox">
-                                    <div class="cart-checkout-continue-accept-policy-text">I accept the Terms and Conditions</div>
+                                    <div class="cart-checkout-continue-accept-policy-text">I accept the <a href="terms-and-conditions.php">Terms and Conditions</a></div>
                                 </div>
 
                                 <div class="cart-checkout-continue-button" id="checkout-btn" onclick="document.getElementById('cartForm').submit();">
@@ -280,7 +280,7 @@
             </div>
 
 
-
+            <?php include_once('includes/footer.php'); ?>
         </div>
     </div>
 </body>

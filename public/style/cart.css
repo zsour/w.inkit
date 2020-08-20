@@ -1,8 +1,8 @@
 .cart-container{
     width: 100%;
     height: auto;
-    min-height: 800px;
     position: relative;
+    padding-bottom: 20px
 }
 
 .cart-container-header{

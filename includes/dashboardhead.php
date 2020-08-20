@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-
+<link rel="icon" href="../public/img/logo.png">
 <link rel="stylesheet" href="../public/style/dashboard.css">
 <link rel="stylesheet" href="../public/style/dashboard-forms.css">
 <link rel="stylesheet" href="../public/style/all-products.css">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="../public/style/create-terms-and-conditions.css">
 <link rel="stylesheet" href="../public/style/modal-style.css">
 <link rel="stylesheet" href="../public/style/edit-cart-product.css">
-
+<link rel="stylesheet" href="../public/style/index-products.css">
 
 <?php
     require_once("../includes/init.php"); 

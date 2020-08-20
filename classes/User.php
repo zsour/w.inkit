@@ -31,6 +31,13 @@
             }
         }
 
+        public function updatePassword($newPassword, $salt, $userId){
+            DB::getInstance()->update('users', $userId, [
+                'password' => $newPassword,
+                'salt' => $salt
+            ]);
+        }
+
         public function find($user = null){
             if($user){
                 $field = (is_numeric($user)) ? 'id' : 'username';

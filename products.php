@@ -17,12 +17,12 @@
         <?php
             include("includes/head.php");
         ?>    
-        
+        <link rel="stylesheet" href="./public/style/dashboard.css">
     </head>
 
 
 <body>
-    <div class="content">
+    <div class="content" id="content">
         <div class="center-content" id="center-content">
                 <div class="products-nav-container">
                     <div class="products-nav-logo" onclick="window.location.href = './';"></div>
@@ -72,7 +72,7 @@
                             <?php
                                 if($singleImage):
                             ?>
-                            <div class="products-display-slideshow-left-btn"></div>
+                            <div class="products-display-slideshow-left-btn" id="leftSlideshowbtn" onclick="slideshow.slideshowMoveLeft();"></div>
                             <?php
                                 endif;
                             ?>
@@ -82,8 +82,9 @@
                                 <?php
                                     foreach($productImages as $showcaseImage):
                                     $showcaseImage = explode("../", $showcaseImage);
+                                    $imgDimensions = getimagesize($showcaseImage[1]);
                                 ?>
-                                <div class="products-display-slideshow-img" style="background-image: url('<?= $showcaseImage[1]; ?>');"></div>
+                                <div class="products-display-slideshow-img" style="background-image: url('<?= $showcaseImage[1]; ?>');" onclick="Modal.imgModal(<?= $imgDimensions[0]/1.8; ?>, <?= $imgDimensions[1]/1.8; ?>, '<?= $showcaseImage[1]; ?>', 'content')"></div>
                                 <?php
                                     endforeach;
                                 ?>
@@ -93,7 +94,7 @@
                             <?php
                                 if($singleImage):
                             ?>
-                            <div class="products-display-slideshow-right-btn" onclick="slideShow.slideshowMoveRight();"></div>
+                            <div class="products-display-slideshow-right-btn" id="rightSlideshowbtn" onclick="slideshow.slideshowMoveRight();"></div>
                             <?php
                                 endif;
                             ?>
@@ -193,10 +194,21 @@
                             endforeach;
                         endif;  
                     ?> 
+
+            
         </div>
+        <?php include_once('includes/footer.php'); ?>
     </div>
 
+    <div class="modal-background" id="modalBG" onclick="Modal.closeModal('content');">
+        <div class="modal-content" id="modalContent">
+            
+        </div>
+    </div>
+</div>
 
 
+
+<script src="./public/js/modal.js"></script>
 </body>
 </html>

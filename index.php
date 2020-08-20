@@ -59,7 +59,10 @@
 
                         <?php
                             $db = DB::getInstance();
-                            $results = $db->find('products');
+                            $results = $db->find('products', [
+                                'conditions' => 'live = 1',
+                                'order' => 'order_of_product'
+                            ]);
                             foreach($results as $product):
                                 $productImages = json_decode($product->image);
                                 $showcaseImage = explode("../", $productImages[0])[1];                        
@@ -100,7 +103,7 @@
                         </div>
                     </div>
                
-
+                    <?php include_once('includes/footer.php'); ?>
             </div>
         </div>
         <script src="public/js/jquery.js"></script>

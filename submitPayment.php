@@ -38,6 +38,15 @@
                 unset($_SESSION['order_id']);
                 header('Location: cart.php');  
             }else{
+                if($productQuery->quantity - $product->quantity > 0){
+                  DB::getInstance()->update('products', [
+                    'quantity' => ($productQuery->quantity - $product->quantity)
+                  ]);
+                }else{
+                  DB::getInstance()->update('products', [
+                    'quantity' => 0
+                  ]);
+                }
                 $totalAmount += ($product->quantity * $productQuery->price);
             }
         }

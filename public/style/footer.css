@@ -1,0 +1,124 @@
+.footer-container{
+    width: 100%;
+    min-height: 300px;
+    background-color: #141414;
+    position: relative;
+    padding-bottom: 40px;
+    margin-top: 20px;
+}
+
+.contact-information{
+    width: 900px;
+    height: auto;
+    padding: 10px;
+    padding-left: 40px;
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 40px;
+    margin-right: 75px;
+}   
+
+.contact-information-alt{
+    font-size: 16px;
+    color: white;
+    font-family: 'Josefin Sans';
+    white-space: normal;
+    margin-bottom: 20px; 
+}
+
+.text-span{
+    padding-left: 10px;
+}
+
+.other-footer-contianer{
+    width: 225px;
+    display: inline-block;
+    right: 0px;
+    vertical-align: top;
+    padding-right: 40px;
+    text-align: right;
+    padding-top: 40px;
+}
+
+.terms-and-conditions{
+    font-size: 18px;
+    color: white;
+    font-family: 'Josefin Sans';
+    white-space: nowrap;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.terms-and-conditions:hover{
+    color: rgb(66, 66, 240);
+}
+
+.social-media-container{
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.social-media-alt{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.social-media-alt-container{
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.social-media-text{
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    font-family: 'Josefin Sans';
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: underline;
+}
+
+.social-media-alt-container:hover .social-media-text{
+    color: rgb(66, 66, 240);
+}
+
+.instagram{
+    background-image: url('../img/icons/instagram_logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.twitter{
+    background-image: url('../img/icons/twitter_logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 1250px){
+    .contact-information{
+        width: 700px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .contact-information{
+        width: 100%;
+        padding-left: 20px;
+    }
+    .social-media-alt-container{
+        text-align: left;
+    }
+    .other-footer-contianer{
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+
