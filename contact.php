@@ -18,7 +18,9 @@
     $errorCheck = false;
 
     if(!empty($fullName) && !empty($email) && !empty($subject) && !empty($content)){
-        $body = "Customer email from " . $fullName . "./n/n" . $content;
+        $body = "Customer email from " . $fullName . " (" . $email . ") 
+        
+        " . $content;
         mail($sendToEmail, $subject, $body);
         $errorCheck = true;
     }
