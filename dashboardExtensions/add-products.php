@@ -85,6 +85,10 @@
                 date_default_timezone_set("Europe/Stockholm");
                 $date = date('Y/m/d H:i:s', time());
 
+
+                $max = DB::getInstance()->query("SELECT MAX( order_of_product ) AS max FROM `products`;")->results()[0]->max;
+                $orderInDb = $max + 1;
+
                 DB::getInstance()->insert('products', array(
                     'title' => $_POST['product-title'],
                     'price' => $_POST['product-price'],
@@ -97,7 +101,8 @@
                     'description' => $_POST['product-description'],
                     'image' => $productImages,
                     'created' => $date,
-                    'updated' => $date
+                    'updated' => $date,
+                    'order_of_product' => $orderInDb
                 ));
                 $_POST = array();
                 $_FILES = array();
