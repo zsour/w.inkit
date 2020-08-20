@@ -21,7 +21,7 @@
         $body = "Customer email from " . $fullName . " (" . $email . ") 
         
         " . $content;
-        mail($sendToEmail, $subject, $body);
+        mail($sendToEmail, $subject, $body, "From: no-reply@winkitprints.com\r\n" . "Content-Type: text/html; charset=UTF-8\r\n");
         $errorCheck = true;
     }
 ?>
