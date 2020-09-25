@@ -80,6 +80,25 @@ class Validate{
                                 }
                             break;
 
+                            case 'imgCheckSingleFile':
+                                if($rule_value == true && $_FILES[$item]['name'] !== ""){
+                                    $nameList = isset($_FILES[$item]['name']) ? $_FILES[$item]['name'] : array();
+
+                               
+  
+                                   
+                                    $info = getimagesize($_FILES[$item]['tmp_name']);
+                                    if ($info === FALSE) {
+                                        $this->addError("Unable to determine image type of uploaded file");
+                                    }
+  
+                                    if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG)) {
+                                        $this->addError($_FILES[$item]['name'] . " Not a gif/jpeg/png");
+                                    }
+                                  }
+                            break;
+
+
                             case 'imgRequired':
                             if($rule_value == true){
                                 foreach ($_FILES[$item] as $key => $value) {
@@ -93,6 +112,8 @@ class Validate{
                                 }
                             }           
                             break;
+
+    
 
                         }
                     }

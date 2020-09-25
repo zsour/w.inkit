@@ -12,8 +12,8 @@
         <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="./public/style/terms-and-conditions.css">
-        <title>w.inkit | Terms & Conditions</title>
+        <link rel="stylesheet" href="./public/style/about-page.css">
+        <title>w.inkit | About</title>
     </head>
 
 
@@ -29,7 +29,7 @@
                             
                             <div class="products-nav-button" id="products-nav-button-about">
                                 <div class="button-text">ABOUT</div>
-                                
+
                                 <div class="products-nav-button-expand-container">
                                     <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'faq';"><p>FAQ</p></div>
                                     <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'about';"><p>About Me</p></div>
@@ -54,41 +54,32 @@
                         </div>
                     </div>
 
-                    <div class="terms-and-conditions-menu">
-                     <?php
-                         $termsHeaders = DB::getInstance()->find('terms_and_conditions', [
-                            'conditions' => 'live = 1',
-                            'order' => 'order_of_conditions'
-                        ]);
-                        foreach($termsHeaders as $termHeader):
-                     ?>
-                    <a class="terms-and-conditions-menu-alt" href="#<?= $termHeader->id; ?>"><div class="dot"></div><?= $termHeader->title; ?></a>
-                    <?php
-                        endforeach;
-                    ?>
-                 </div>
 
-                 <div class="terms-and-conditions-content">
+                    <div class="about-page-content">
                     <?php
-                         $termsHeaders = DB::getInstance()->find('terms_and_conditions', [
-                            'conditions' => 'live = 1',
-                            'order' => 'order_of_conditions'
+                         $aboutHeaders = DB::getInstance()->find('about', [
+                            'conditions' => 'live = ?',
+                            'bind' => [1],
+                            'order' => 'order_of_info'
                         ]);
-                        foreach($termsHeaders as $termHeader):
-                            $paragraphArray = json_decode($termHeader->terms_conditions);
+                        foreach($aboutHeaders as $aboutHeader):
+                            $paragraphArray = json_decode($aboutHeader->info_block);
                      ?>
                      
-                        <div class="terms-and-conditions-content-header">
-                            <a name="<?= $termHeader->id; ?>"><?= $termHeader->title; ?></a>
+                        <div class="about-content-header">
+                            <p class="about-header-text"><?= $aboutHeader->title; ?></p>
                         </div>
+                  
+
+                         <div class="about-paragraph-content">
                             <?php
                                 foreach($paragraphArray as $paragraph):
                             ?>
-                                <div class="terms-and-conditions-content-paragraph"><?= $paragraph; ?></div>
+                                <div class="about-paragraph"><?= $paragraph; ?></div>
                             <?php
                                 endforeach;
                             ?>
-
+                        </div>
                     <?php
                         endforeach;
                     ?>

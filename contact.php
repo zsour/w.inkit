@@ -45,8 +45,14 @@
                                 <div class="button-text">PRODUCTS</div>
                             </div> 
                             
-                            <div class="products-nav-button" onclick="window.location.href = 'about';">
+                            <div class="products-nav-button" id="products-nav-button-about">
                                 <div class="button-text">ABOUT</div>
+
+                                <div class="products-nav-button-expand-container">
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'faq';"><p>FAQ</p></div>
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'about';"><p>About Me</p></div>
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'terms-and-conditions';"><p>Terms And Conditions</p></div>
+                                </div>
                             </div> 
 
                             <div class="products-nav-button" onclick="window.location.href = 'contact';">

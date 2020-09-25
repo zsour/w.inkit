@@ -27,8 +27,14 @@
                                 <div class="button-text">PRODUCTS</div>
                             </div> 
                             
-                            <div class="products-nav-button" onclick="window.location.href = 'about';">
+                            <div class="products-nav-button" id="products-nav-button-about">
                                 <div class="button-text">ABOUT</div>
+
+                                <div class="products-nav-button-expand-container">
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'faq';"><p>FAQ</p></div>
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'about';"><p>About Me</p></div>
+                                    <div class="product-nav-button-expand-alt"  onclick="window.location.href = 'terms-and-conditions';"><p>Terms And Conditions</p></div>
+                                </div>
                             </div> 
 
                             <div class="products-nav-button" onclick="window.location.href = 'contact';">
@@ -52,14 +58,17 @@
                     <div class="about-page-content">
                     <?php
                          $aboutHeaders = DB::getInstance()->find('about', [
-                            'conditions' => 'live = ?',
-                            'bind' => [1],
                             'order' => 'order_of_info'
                         ]);
                         foreach($aboutHeaders as $aboutHeader):
+                            if($aboutHeader->live == 1):
                             $paragraphArray = json_decode($aboutHeader->info_block);
+                            $aboutImage = $aboutHeader->image;
+                            $showcaseImage = explode("../", $aboutImage)[1];    
+                            if(empty($aboutHeader->image)):
                      ?>
                      
+                        
                         <div class="about-content-header">
                             <p class="about-header-text"><?= $aboutHeader->title; ?></p>
                         </div>
@@ -74,7 +83,15 @@
                                 endforeach;
                             ?>
                         </div>
+
+                        <?php
+                            else:
+                        ?>
+
+                        <div class="about-page-image" style="background-image: url('<?= $showcaseImage; ?>');"></div>
                     <?php
+                            endif;
+                        endif;
                         endforeach;
                     ?>
                  </div>

@@ -36,8 +36,10 @@
                         ]);
                         foreach($aboutHeaders as $aboutHeader):
                             $paragraphArray = json_decode($aboutHeader->info_block);
+                            if(empty($aboutHeader->image)):
                      ?>
                      
+                        
                         <div class="about-content-header">
                             <p class="about-header-text"><?= $aboutHeader->title; ?></p>
                         </div>
@@ -52,13 +54,18 @@
                                 endforeach;
                             ?>
                         </div>
+
+                        <?php
+                            else:
+                        ?>
+
+                        <div class="about-page-image" style="background-image: url('<?= $aboutHeader->image; ?>');"></div>
                     <?php
+                        endif;
                         endforeach;
                     ?>
                  </div>
          </div>
     </div>
     </body>
-
-    <script src="../public/js/about-page-image-handler.js"></script>
     </html>

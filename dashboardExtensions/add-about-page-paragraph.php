@@ -75,9 +75,11 @@
                                  $db = DB::getInstance();
                                  $headerTitles = $db->find('about');
                                  foreach($headerTitles as $headerTitle):
+                                if(empty($headerTitle->image)):
                         ?>
                         <option value="<?= $headerTitle->id; ?>"><?= $headerTitle->title; ?></option>
                         <?php
+                            endif;
                             endforeach;
                         ?>
                         </select>

@@ -30,9 +30,15 @@
                     <div class="edit-terms-and-conditions-button-text">ADD NEW PARAGRAPH</div>
                 </div>
 
+
+                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-about-page-image.php');">
+                    <div class="edit-terms-and-conditions-button-text">ADD IMAGE</div>
+                </div>
+
                 <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./preview-about-page.php');">
                     <div class="edit-terms-and-conditions-button-text">PREVIEW</div>
                 </div>
+
                     
                 <div class="edit-terms-and-conditions-refresh-btn" onclick="document.getElementById('refresh-all-about-info-form').submit();"></div>
                 <form action="./functionality/refresh-all-about-info.php" id="refresh-all-about-info-form"></form>
@@ -51,12 +57,41 @@
             <form action="./functionality/remove-about-header.php" method="POST" id="remove-title-<?= $aboutHeader->id; ?>">
                 <input type="hidden" name="orderId" value="<?= $aboutHeader->order_of_info; ?>">
             </form>
-            <div class="terms-and-conditions-title-top">
-                <div class="terms-and-conditions-title-top-text">Header: <?= $aboutHeader->title; ?></div>
+            <div class="terms-and-conditions-title-top"
+                <?php
+                    if(!empty($aboutHeader->image)):
+                ?>
+                    style="background-color: none;"
+                <?php
+                    endif;
+                ?>>
+
+                <?php
+                    if(empty($aboutHeader->image)):
+                ?>
+                    <div class="terms-and-conditions-title-top-text">Header: <?= $aboutHeader->title; ?></div>
+                    
+                <?php
+                    else:
+                ?>
+                    <div class="terms-and-conditions-title-top-text">Image</div>
+                <?php
+                    endif;
+                ?>
             </div>
             
-            <div class="terms-and-conditions-title-buttons">
+            <div class="terms-and-conditions-title-buttons"
+                    <?php
+                        if(!empty($aboutHeader->image)):
+                    ?>
+                        style="height: 100px; text-align: right;"
+                    <?php
+                        endif;
+                    ?>>
                 
+                <?php
+                    if(empty($aboutHeader->image)):
+                ?>
                 <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./all-about-paragraphs.php?aboutHeader=<?= $aboutHeader->id; ?>');">
                     <div class="edit-terms-and-conditions-button-text">ALL PARAGRAPHS</div>
                 </div>
@@ -64,6 +99,14 @@
                 <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./edit-about-header-title.php?aboutHeader=<?= $aboutHeader->id; ?>');">
                     <div class="edit-terms-and-conditions-button-text">EDIT HEADER</div>
                 </div>
+
+                <?php
+                    else:
+                ?>
+                    <div class="about-page-image-header" style="background-image: url('<?= $aboutHeader->image; ?>');"></div>
+                <?php
+                    endif;
+                ?>
 
                 <div class="editing-switch"  id="editing-switch-<?= $aboutHeader->id; ?>"<?php
                         if(!$switchPos){

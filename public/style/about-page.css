@@ -42,7 +42,7 @@
 }
 
 .about-paragraph-content{
-    width: 1200px;
+    width: auto;
     display: inline-block;
     vertical-align: top;
 }
@@ -147,4 +147,17 @@
     100%{
         transform: rotate(0deg);
     }
+}
+
+
+.about-page-image{
+    width: 95%;
+    height: 350px;
+    padding-left: 10px;
+    line-height: 80px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-left: 2.5%;
 }
