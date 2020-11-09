@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 07 nov 2020 kl 21:02
+-- Tid vid skapande: 09 nov 2020 kl 12:55
 -- Serverversion: 10.4.11-MariaDB
 -- PHP-version: 7.2.30
 
@@ -36,15 +36,6 @@ CREATE TABLE `about` (
   `image` text NOT NULL,
   `imageStyle` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumpning av Data i tabell `about`
---
-
-INSERT INTO `about` (`id`, `info_block`, `title`, `live`, `order_of_info`, `image`, `imageStyle`) VALUES
-(8, '[\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\\r\\n\\r\\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"]', 'About My Art', 1, 1, '', ''),
-(15, '[\"I like to paint.\"]', 'New Header', 1, 2, '', ''),
-(16, '', '', 1, 3, '../public/img/uploadedImages/5f88824f8d5e88.45663759.png', '');
 
 -- --------------------------------------------------------
 
@@ -143,9 +134,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `cart`, `email`, `country`, `city`, `phone`, `zip`, `address`, `unique_id`, `paid`, `archived`, `full_name`, `braintree_id`, `payment_date`, `shipped`, `refunded`) VALUES
-(63, '[{\"id\":\"58\",\"quantity\":\"1\",\"priceDuringOrder\":\"85.00\"},{\"id\":\"60\",\"quantity\":\"2\",\"priceDuringOrder\":\"33.00\"}]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f3ef0f41cede', 1, 0, 'Daniel Karlsson', '9hfmhj69', '2020/08/20 23:54:08', 0, '0'),
-(64, '[{\"id\":\"58\",\"quantity\":\"1\",\"priceDuringOrder\":\"85.00\"}]', 'malinp82@gmail.com', 'Sverige', 'Varberg', '0762300722', '43242', 'Thulegatan 9D', '5f43af03d35eb', 1, 0, 'Malin Wejrot', '73xnz0cp', '2020/08/24 14:14:27', 0, '0'),
-(65, '[{\"id\":\"57\",\"quantity\":\"1\",\"priceDuringOrder\":\"94.00\"}]', 'malinp82@gmail.com', 'Sverige', 'Varberg', '0762300722', '43242', 'Thulegatan 9D', '5f43b53494da7', 1, 0, 'Malin Wejrot', 'a1hka0q0', '2020/08/24 14:41:00', 0, '0');
+(63, '[{\"id\":\"58\",\"quantity\":\"1\",\"priceDuringOrder\":\"85.00\"}]', 'daniel.karlsson36@outlook.com', 'Sweden', 'Varberg', '0739808116', '432 47', 'Gråhallsvägen 23', '5f3ef0f41cede', 1, 0, 'Daniel Karlsson', '9hfmhj69', '2020/08/20 23:54:08', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -178,12 +167,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `price`, `list_price`, `category`, `image`, `description`, `archived`, `created`, `updated`, `width`, `height`, `weight`, `production_value`, `quantity`, `live`, `order_of_product`) VALUES
-(56, 'Walk on water - Limited Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '85.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f3eee450a2d57.01622719.jpg\"]', 'This print is part of my series of masked girls. They all took part in an exhibition this summer and each one is a limited edition of 25.\r\n\r\n\"Walk on water\"\r\n\r\nThe paper is 54 x 39 cm and the print is 31 x 20,5 cm\r\n\r\n\r\nHandmade Linocut Linoprint, B/W Limited edition of 25 prints, featuring a girl walking in the water wearing a mask.\r\n\r\nPrinted with care from an self made original linoleum carving\r\n\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n-The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it\'s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:42:29', '2020-08-20 23:42:29', '0.00', '0.00', '0.00', '40.00', 2, 1, 3),
-(57, 'I Love You (pink) - Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '94.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f3eee99e63c95.46024958.jpg\"]', 'Handmade Linocut Linoprint, B/W featuring Mary making a heart with her hands.\r\n\r\n.............................................................\r\n.............................................................\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n- The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it\'s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:43:53', '2020-08-20 23:43:53', '0.00', '0.00', '0.00', '0.00', 3, 1, 4),
-(58, 'Geisha - Limited Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '85.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f3eeeffd2a703.91877302.jpg\"]', 'Handmade Linocut Linoprint, Made from two linoplates for two colour print - Limited edition of 25 prints, featuring a Geisha.\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n- The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it\'s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:45:35', '2020-08-20 23:45:35', '400.00', '530.00', '0.00', '0.00', 2, 0, 5),
-(59, 'Lemons - Limited Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '50.00', '85.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f3eef3f01bcb4.85798775.jpg\"]', 'Lemons - Original Handmade Linocut Linoprint, A multicolour block print, B/W and yellow Limited edition of 60 prints, featuring lemons. The print measures about 26 x 26 centimetres.\r\n\r\nPrinted with care from an self made original linoleum carving\r\n\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n- The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it’s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:46:39', '2020-08-20 23:46:39', '260.00', '260.00', '0.00', '30.00', 3, 1, 2),
-(60, 'Star Wars - Hoth - Limited Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '33.00', '50.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f3eefa086c4e4.68240354.jpg\"]', 'Hoth - Original Handcarved\r\n\r\nThis is one of my print from my Star Wars series with six selected planet/places from the movies.\r\n\r\nPrinted with care from an self made original linoleum carving\r\n\r\nHoth was a remote, icy planet that was the sixth planet in the star system of the same name. It notably hosted Echo Base, the temporary headquarters of the Alliance to Restore the Republic, until the Galactic Empire located the Rebels, initiating a major confrontation known as the Battle of Hoth.\r\n\r\nHandmade Linocut Linoprint, B/W Limited edition of 100 prints, featuring the planet Hoth from Star Wars\r\n\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n-The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it\'s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:48:16', '2020-08-20 23:48:16', '195.00', '265.00', '0.00', '20.00', 2, 1, 1),
-(61, 'Queen B', '50.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5f43b173e83610.39531638.jpg\"]', 'Queen B, Handmade linoleum', 0, '2020-08-24 14:24:19', '2020-08-24 14:24:19', '160.00', '230.00', '0.00', '0.00', 2, 1, 6);
+(58, 'Geisha - Limited Linoleum Edition Linocut Block Handprinted on Hahnemühle Paper', '85.00', '0.00', 0, '[\"..\\/public\\/img\\/uploadedImages\\/5fa92bc6083440.95325811.jpg\"]', 'Handmade Linocut Linoprint, Made from two linoplates for two colour print - Limited edition of 25 prints, featuring a Geisha.\r\n\r\n- Handcarved in Lino and handpulled on a press – each print is an unique, original, handmade artwork, signed and numbered by the artist\r\n\r\n- Hand-finished edges, so you can frame it with a mount or with edges exposed as you prefer :)\r\n\r\n- As each print is handmade and unique, there may be tiny variations from the one pictured here.\r\n\r\n- The linocut is on beautiful quality Hahnemühle 230gsm subtly textured fine art paper, chosen for it\'s quality colour reproduction and archivability.\r\n\r\n- All materials used are of archival quality, so if treated correctly this artwork will last for centuries to come\r\n\r\n- Limited edition printed in Black on white\r\n\r\nNB In this edition some prints shows some of the traces from the block - this is deliberate artistic choice, and is by no means to be considered as a flaw.', 0, '2020-08-20 23:45:35', '2020-11-09 12:45:10', '400.00', '530.00', '0.00', '0.00', 2, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -198,13 +182,6 @@ CREATE TABLE `terms_and_conditions` (
   `terms_conditions` text CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
   `live` int(5) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumpning av Data i tabell `terms_and_conditions`
---
-
-INSERT INTO `terms_and_conditions` (`id`, `order_of_conditions`, `title`, `terms_conditions`, `live`) VALUES
-(26, 1, 'Test', '', 0);
 
 -- --------------------------------------------------------
 
@@ -325,7 +302,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT för tabell `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT för tabell `groups`
@@ -337,7 +314,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT för tabell `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT för tabell `products`

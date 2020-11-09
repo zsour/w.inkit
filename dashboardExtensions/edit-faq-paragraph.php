@@ -1,13 +1,13 @@
 <?php
     include_once("../includes/dashboardhead.php");
 
-    if(isset($_GET['termHeader']) && isset($_GET['orderId'])){
-        $header = $db = DB::getInstance()->findFirst('terms_and_conditions', array(
+    if(isset($_GET['faqHeader']) && isset($_GET['orderId'])){
+        $header = $db = DB::getInstance()->findFirst('faq', array(
             'conditions' => "id = ?",
-            'bind' => [$_GET['termHeader']]
+            'bind' => [$_GET['faqHeader']]
         ));
 
-        $currentEditingParagraph = json_decode($header->terms_conditions)[$_GET['orderId']];
+        $currentEditingParagraph = json_decode($header->info_block)[$_GET['orderId']];
     }else{
         header("Location: ./create-terms-and-conditions.php");
     }
@@ -23,25 +23,25 @@
         
     <div class="center-components" id="center-components"> 
         <div class="dashboardExtensionHeader">
-            Edit terms and conditions paragraph
+            Edit faq page paragraph
         </div>
 
                    
-        <form action="functionality/functionality.edit-paragraph.php" method="POST" id="edit-paragraph-form">
+        <form action="functionality/functionality.edit-faq-page-paragraph.php" method="POST" id="edit-paragraph-form">
             <div class="headerAboveInput">Header For Paragraph</div>
            
 
                         <select name="headerTitle" id="headerTitleSelect">
                         <?php
                                  $db = DB::getInstance();
-                                 $headerTitles = $db->find('terms_and_conditions');
+                                 $headerTitles = $db->find('faq');
                                  foreach($headerTitles as $headerTitle):
                         ?>
                         <option value="<?= $headerTitle->id; ?>" <?php
-                            if($headerTitle->id == $_GET['termHeader']){
+                            if($headerTitle->id == $_GET['faqHeader']){
                                     echo(' selected');
                             }
-                        ?> <?php if($headerTitle->id == $_GET['termHeader']):
+                        ?> <?php if($headerTitle->id == $_GET['faqHeader']):
                             ?> selected <?php endif;?>><?= $headerTitle->title; ?></option>
                         <?php
                             endforeach;
@@ -50,8 +50,8 @@
    
 
             <div class="headerAboveInput">Paragraph Content</div>
-            <textarea name="terms" id="terms" cols="30" rows="10" placeholder="Type Your Terms And Conditions"><?= (!empty($currentEditingParagraph)) ? trim($currentEditingParagraph) : ""; ?></textarea>
-            <input type="hidden" name="termHeader" value="<?= $_GET['termHeader']; ?>">
+            <textarea name="info" id="terms" cols="30" rows="10" placeholder="Type Your Information:"><?= (!empty($currentEditingParagraph)) ? trim($currentEditingParagraph) : ""; ?></textarea>
+            <input type="hidden" name="faqHeader" value="<?= $_GET['faqHeader']; ?>">
             <input type="hidden" name="orderId" value="<?= $_GET['orderId']; ?>">
         </form>
         

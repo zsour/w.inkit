@@ -31,18 +31,18 @@
             <div class="headerAboveInput">Header For Paragraph</div>
            
 
-                        <select name="headerTitle" id="headerTitleSelect">
+                    <select name="headerTitle" id="headerTitleSelect">
                         <?php
                                  $db = DB::getInstance();
                                  $headerTitles = $db->find('about');
                                  foreach($headerTitles as $headerTitle):
+                                if(empty($headerTitle->image)):
                         ?>
                         <option value="<?= $headerTitle->id; ?>" <?php
-                            if($headerTitle->id == $_GET['aboutHeader']){
-                                    echo(' selected');
-                            }
-                        ?>><?= $headerTitle->title; ?></option>
+                            if($headerTitle->id == $_GET['aboutHeader']):
+                            ?> selected <?php endif;?>><?= $headerTitle->title; ?></option>
                         <?php
+                            endif;
                             endforeach;
                         ?>
                         </select>

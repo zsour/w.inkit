@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="./public/style/about-page.css">
-        <title>w.inkit | About</title>
+        <title>w.inkit | FAQ</title>
     </head>
 
 
@@ -57,7 +57,7 @@
 
                     <div class="about-page-content">
                     <?php
-                         $aboutHeaders = DB::getInstance()->find('about', [
+                         $aboutHeaders = DB::getInstance()->find('faq', [
                             'conditions' => 'live = ?',
                             'bind' => [1],
                             'order' => 'order_of_info'

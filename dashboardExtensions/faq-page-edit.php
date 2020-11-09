@@ -18,48 +18,44 @@
 
         <div class="edit-terms-and-conditions-container">
             <div class="edit-terms-and-conditions-title">
-                <div class="edit-terms-and-conditions-title-text">Edit faq page</div>
+                <div class="edit-terms-and-conditions-title-text">Edit FAQ page</div>
             </div>
 
             <div class="edit-terms-and-conditions-button-container">
-                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-about-page-header.php');">
+                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-faq-page-header.php');">
                     <div class="edit-terms-and-conditions-button-text">ADD NEW HEADER</div>
                 </div>
 
-                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-about-page-paragraph.php');">
+                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-faq-page-paragraph.php');">
                     <div class="edit-terms-and-conditions-button-text">ADD NEW PARAGRAPH</div>
                 </div>
 
 
-                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./add-about-page-image.php');">
-                    <div class="edit-terms-and-conditions-button-text">ADD IMAGE</div>
-                </div>
-
-                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./preview-about-page.php');">
+                <div class="edit-terms-and-conditions-button" onclick="Navigation.loadComponents('./preview-faq-page.php');">
                     <div class="edit-terms-and-conditions-button-text">PREVIEW</div>
                 </div>
 
                     
-                <div class="edit-terms-and-conditions-refresh-btn" onclick="document.getElementById('refresh-all-about-info-form').submit();"></div>
-                <form action="./functionality/refresh-all-about-info.php" id="refresh-all-about-info-form"></form>
+                <div class="edit-terms-and-conditions-refresh-btn" onclick="document.getElementById('refresh-all-faq-info-form').submit();"></div>
+                <form action="./functionality/refresh-all-faq-info.php" id="refresh-all-faq-info-form"></form>
             </div>
         </div>
 
 
         <?php
-            $aboutHeaders = DB::getInstance()->find('about', [
+            $faqHeaders = DB::getInstance()->find('faq', [
                 'order' => 'order_of_info'
                 ]);
-            foreach($aboutHeaders as $aboutHeader):
-                $switchPos = $aboutHeader->live == 0 ? 0 : 1;
+            foreach($faqHeaders as $faqHeader):
+                $switchPos = $faqHeader->live == 0 ? 0 : 1;
         ?>
         <div class="terms-and-conditions-title">
-            <form action="./functionality/remove-about-header.php" method="POST" id="remove-title-<?= $aboutHeader->id; ?>">
-                <input type="hidden" name="orderId" value="<?= $aboutHeader->order_of_info; ?>">
+            <form action="./functionality/remove-faq-header.php" method="POST" id="remove-title-<?= $faqHeader->id; ?>">
+                <input type="hidden" name="orderId" value="<?= $faqHeader->order_of_info; ?>">
             </form>
             <div class="terms-and-conditions-title-top"
                 <?php
-                    if(!empty($aboutHeader->image)):
+                    if(!empty($faqHeader->image)):
                 ?>
                     style="background-color: none;"
                 <?php
@@ -67,9 +63,9 @@
                 ?>>
 
                 <?php
-                    if(empty($aboutHeader->image)):
+                    if(empty($faqHeader->image)):
                 ?>
-                    <div class="terms-and-conditions-title-top-text">Header: <?= $aboutHeader->title; ?></div>
+                    <div class="terms-and-conditions-title-top-text">Header: <?= $faqHeader->title; ?></div>
                     
                 <?php
                     else:
@@ -82,7 +78,7 @@
             
             <div class="terms-and-conditions-title-buttons"
                     <?php
-                        if(!empty($aboutHeader->image)):
+                        if(!empty($faqHeader->image)):
                     ?>
                         style="height: 100px; text-align: right;"
                     <?php
@@ -90,32 +86,32 @@
                     ?>>
                 
                 <?php
-                    if(empty($aboutHeader->image)):
+                    if(empty($faqHeader->image)):
                 ?>
-                <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./all-about-paragraphs.php?aboutHeader=<?= $aboutHeader->id; ?>');">
+                <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./all-faq-paragraphs.php?faqHeader=<?= $faqHeader->id; ?>');">
                     <div class="edit-terms-and-conditions-button-text">ALL PARAGRAPHS</div>
                 </div>
 
-                <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./edit-about-header-title.php?aboutHeader=<?= $aboutHeader->id; ?>');">
+                <div class="edit-terms-and-conditions-button small-btn" onclick="Navigation.loadComponents('./edit-faq-header-title.php?faqHeader=<?= $faqHeader->id; ?>');">
                     <div class="edit-terms-and-conditions-button-text">EDIT HEADER</div>
                 </div>
 
                 <?php
                     else:
                 ?>
-                    <div class="about-page-image-header" style="background-image: url('<?= $aboutHeader->image; ?>');"></div>
+                    <div class="faq-page-image-header" style="background-image: url('<?= $faqHeader->image; ?>');"></div>
                 <?php
                     endif;
                 ?>
 
-                <div class="editing-switch"  id="editing-switch-<?= $aboutHeader->id; ?>"<?php
+                <div class="editing-switch"  id="editing-switch-<?= $faqHeader->id; ?>"<?php
                         if(!$switchPos){
                             echo('style="
                                 background-color: #979696;
                             "');
                         }
-                ?> onclick="flipSwitch(<?= $switchPos ?>, 'switchForm<?= $aboutHeader->id; ?>', 'editing-switch-<?= $aboutHeader->id; ?>', 'editing-switch-btn-<?= $aboutHeader->id; ?>');">
-                        <div class="editing-switch-btn" id="editing-switch-btn-<?= $aboutHeader->id; ?>"
+                ?> onclick="flipSwitch(<?= $switchPos ?>, 'switchForm<?= $faqHeader->id; ?>', 'editing-switch-<?= $faqHeader->id; ?>', 'editing-switch-btn-<?= $faqHeader->id; ?>');">
+                        <div class="editing-switch-btn" id="editing-switch-btn-<?= $faqHeader->id; ?>"
                             <?php
                                 if(!$switchPos){
                                     echo('style="
@@ -126,13 +122,13 @@
                         ><span class="editing-switch-btn-icon"></span></div>
                 </div>
 
-                <div class="moveUpBtn" onclick="window.location.href = 'functionality/order-about-headers.php?aboutOrder=<?= $aboutHeader->order_of_info; ?>&pos=1'"></div>
-                <div class="moveDownBtn" onclick="window.location.href = 'functionality/order-about-headers.php?aboutOrder=<?= $aboutHeader->order_of_info; ?>&pos=-1'"></div>
-                <div class="removeBtn" onclick="document.getElementById('remove-title-<?= $aboutHeader->id; ?>').submit();"></div>
+                <div class="moveUpBtn" onclick="window.location.href = 'functionality/order-faq-headers.php?faqOrder=<?= $faqHeader->order_of_info; ?>&pos=1'"></div>
+                <div class="moveDownBtn" onclick="window.location.href = 'functionality/order-faq-headers.php?faqOrder=<?= $faqHeader->order_of_info; ?>&pos=-1'"></div>
+                <div class="removeBtn" onclick="document.getElementById('remove-title-<?= $faqHeader->id; ?>').submit();"></div>
             </div>
 
-            <form action="functionality/aboutSwitchFlipper.php" id="switchForm<?= $aboutHeader->id; ?>" method="POST">
-                <input type="hidden" name="id" value="<?= $aboutHeader->id; ?>">
+            <form action="functionality/faqSwitchFlipper.php" id="switchForm<?= $faqHeader->id; ?>" method="POST">
+                <input type="hidden" name="id" value="<?= $faqHeader->id; ?>">
                 <input type="hidden" name="pos" value="<?= $switchPos; ?>">
             </form>
         </div>
